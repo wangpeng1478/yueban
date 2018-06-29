@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <title>地图找房</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/blank.css">
+    <link rel="stylesheet" href="css/map.css">
+   <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+</head>
+<body>
+    <div class="map-bg">
+        <div>
+            <div class="map-bar-filter">
+                <!-- ========================================= -->
+                <!-- ========================================== -->
+                <div class="filter-item">
+                    <div class="title fl">区域</div>
+                    <div class="region-box" id="regi-box1">
+                        <input class="box-input" id="box-input1" type="text" value="全部" autocomplete="off" readonly="readonly" />
+                        <div class="box-li" id="box-li">
+                            <a href="javascript:void(0)">全部</a>
+                            <a href="javascript:void(0)" data-flag="pudong">浦东</a>
+                            <a href="javascript:void(0)" data-flag="huangpu">黄埔</a>
+                            <a href="javascript:void(0)" data-flag="luwan">卢湾</a>
+                            <a href="javascript:void(0)" data-flag="xuhui">徐汇</a>
+                            <a href="javascript:void(0)" data-flag="changding">长宁</a>
+                            <a href="javascript:void(0)" data-flag="jingan">静安</a>
+                            <a href="javascript:void(0)" data-flag="putong">普陀</a>
+                            <a href="javascript:void(0)" data-flag="zhabei">闸北</a>
+                            <a href="javascript:void(0)" data-flag="hongkou">虹口</a>
+                            <a href="javascript:void(0)" data-flag="yangpu">杨浦</a>
+                            <a href="javascript:void(0)" data-flag="minhang">闵行</a>
+                            <a href="javascript:void(0)" data-flag="baoshan">宝山</a>
+                            <a href="javascript:void(0)" data-flag="jiading">嘉定</a>
+                            <a href="javascript:void(0)" data-flag="songjiang">松江</a>
+                            <a href="javascript:void(0)" data-flag="qingpu">青浦</a>
+                            <a href="javascript:void(0)" data-flag="fengxian">奉贤</a>
+                            <a href="javascript:void(0)" data-flag="zhoubian">上海周边</a>
+                        </div>
+                        <div class="box-li-x" id="box-lis" style="display: none;">
+                            <!-- 浦东 -->
+                            <a href="javascript:void(0)" data-flag="pudong">北外滩</a>
+                            <a href="javascript:void(0)" data-flag="pudong">大柏树</a>
+                            <a href="javascript:void(0)" data-flag="pudong">虹口足球场</a>
+                            <a href="javascript:void(0)" data-flag="pudong">和平公园</a>
+                            <a href="javascript:void(0)" data-flag="pudong">曲阳</a>
+                            <a href="javascript:void(0)" data-flag="pudong">四川北路</a>
+                            <a href="javascript:void(0)" data-flag="pudong">四平路</a>
+                            <!-- 黄埔 -->
+                            <a href="javascript:void(0)" data-flag="huangpu">董家渡</a>
+                            <a href="javascript:void(0)" data-flag="huangpu">老西门</a>
+                            <a href="javascript:void(0)" data-flag="huangpu">南京东路</a>
+                            <a href="javascript:void(0)" data-flag="huangpu">人民广场</a>
+                            <a href="javascript:void(0)" data-flag="huangpu">外滩</a>
+                            <!-- 卢湾 -->
+                            <a href="javascript:void(0)" data-flag="luwan">打浦桥</a>
+                            <a href="javascript:void(0)" data-flag="luwan">淮海中路</a>
+                            <a href="javascript:void(0)" data-flag="luwan">五里桥/鲁班路</a>
+                            <a href="javascript:void(0)" data-flag="luwan">新天地</a>
+                            <!-- 徐汇 -->
+                            <a href="javascript:void(0)" data-flag="xuhui">漕河泾</a>
+                            <a href="javascript:void(0)" data-flag="xuhui">淮海西路</a>
+                            <a href="javascript:void(0)" data-flag="xuhui">龙华</a>
+                            <a href="javascript:void(0)" data-flag="xuhui">上海南站</a>
+                            <a href="javascript:void(0)" data-flag="xuhui">万体馆</a>
+                            <a href="javascript:void(0)" data-flag="xuhui">徐家汇</a>
+                            <!-- 长宁 -->
+                            <a href="javascript:void(0)" data-flag="changding">北新泾</a>
+                            <a href="javascript:void(0)" data-flag="changding">虹桥火车站</a>
+                            <a href="javascript:void(0)" data-flag="changding">虹桥开发区</a>
+                            <a href="javascript:void(0)" data-flag="changding">天山路</a>
+                            <a href="javascript:void(0)" data-flag="changding">延安西路</a>
+                            <a href="javascript:void(0)" data-flag="changding">中山公园</a>
+                            <!-- 静安 -->
+                            <a href="javascript:void(0)" data-flag="jingan">北京西路</a>
+                            <a href="javascript:void(0)" data-flag="jingan">曹家渡</a>
+                            <a href="javascript:void(0)" data-flag="jingan">静安寺</a>
+                            <a href="javascript:void(0)" data-flag="jingan">南京西路/江宁路</a>
+                            <!-- 普陀 -->
+                            <a href="javascript:void(0)" data-flag="putong">甘泉宜川</a>
+                            <a href="javascript:void(0)" data-flag="putong">中远两湾城</a>
+                            <a href="javascript:void(0)" data-flag="putong">中山北路</a>
+                            <a href="javascript:void(0)" data-flag="putong">长风商务圈</a>
+                            <a href="javascript:void(0)" data-flag="putong">长寿路</a>
+                            <a href="javascript:void(0)" data-flag="putong">真如/李子园</a>
+                            <!-- 闸北 -->
+                            <a href="javascript:void(0)" data-flag="zhabei">大宁/延长路</a>
+                            <a href="javascript:void(0)" data-flag="zhabei">火车站</a>
+                            <a href="javascript:void(0)" data-flag="zhabei">汶水路/共和新路</a>
+                            <a href="javascript:void(0)" data-flag="zhabei">彭浦</a>
+                            <a href="javascript:void(0)" data-flag="zhabei">闸北公园</a>
+                            <!-- 虹口 -->
+                            <a href="javascript:void(0)" data-flag="hongkou">北外滩</a>
+                            <a href="javascript:void(0)" data-flag="hongkou">大柏树</a>
+                            <a href="javascript:void(0)" data-flag="hongkou">虹口足球场</a>
+                            <a href="javascript:void(0)" data-flag="hongkou">和平公园</a>
+                            <a href="javascript:void(0)" data-flag="hongkou">曲阳</a>
+                            <a href="javascript:void(0)" data-flag="hongkou">四川北路</a>
+                            <a href="javascript:void(0)" data-flag="hongkou">四平路</a>
+                            <!-- 杨浦 -->
+                            <a href="javascript:void(0)" data-flag="yangpu">鞍山</a>
+                            <a href="javascript:void(0)" data-flag="yangpu">控江路</a>
+                            <a href="javascript:void(0)" data-flag="yangpu">周家嘴</a>
+                            <a href="javascript:void(0)" data-flag="yangpu">东外滩</a>
+                            <a href="javascript:void(0)" data-flag="yangpu">平凉</a>
+                            <a href="javascript:void(0)" data-flag="yangpu">长阳路</a>
+                            <a href="javascript:void(0)" data-flag="yangpu">五角场</a>
+                            <a href="javascript:void(0)" data-flag="yangpu">新江湾城</a>
+                            <a href="javascript:void(0)" data-flag="yangpu">中原</a>
+                            <!-- 闵行 -->
+                            <a href="javascript:void(0)" data-flag="minhang">七宝</a>
+                            <a href="javascript:void(0)" data-flag="minhang">七莘路</a>
+                            <a href="javascript:void(0)" data-flag="minhang">莘庄</a>
+                            <a href="javascript:void(0)" data-flag="minhang">颛桥/老闵行</a>
+                            <a href="javascript:void(0)" data-flag="minhang">春申</a>
+                            <a href="javascript:void(0)" data-flag="minhang">虹桥镇</a>
+                            <a href="javascript:void(0)" data-flag="minhang">华漕</a>
+                            <a href="javascript:void(0)" data-flag="minhang">南方商城</a>
+                            <a href="javascript:void(0)" data-flag="minhang">浦江</a>
+                            <a href="javascript:void(0)" data-flag="minhang">龙柏金汇</a>
+                            <a href="javascript:void(0)" data-flag="minhang">闵行其他</a>
+                            <!-- 宝山 -->
+                            <a href="javascript:void(0)" data-flag="baoshan">淞南高境</a>
+                            <a href="javascript:void(0)" data-flag="baoshan">顾村</a>
+                            <a href="javascript:void(0)" data-flag="baoshan">共康</a>
+                            <a href="javascript:void(0)" data-flag="baoshan">共富</a>
+                            <a href="javascript:void(0)" data-flag="baoshan">大华</a>
+                            <a href="javascript:void(0)" data-flag="baoshan">宝山其它</a>
+                            <!-- 嘉定 -->
+                            <a href="javascript:void(0)" data-flag="jiading">安亭</a>
+                            <a href="javascript:void(0)" data-flag="jiading">丰庄</a>
+                            <a href="javascript:void(0)" data-flag="jiading">嘉定城区</a>
+                            <a href="javascript:void(0)" data-flag="jiading">江桥</a>
+                            <a href="javascript:void(0)" data-flag="jiading">南翔</a>
+                            <a href="javascript:void(0)" data-flag="jiading">嘉定其他</a>
+                            <!-- 松江 -->
+                            <a href="javascript:void(0)" data-flag="songjiang">九亭</a>
+                            <a href="javascript:void(0)" data-flag="songjiang">泗泾</a>
+                            <a href="javascript:void(0)" data-flag="songjiang">松花大学城</a>
+                            <a href="javascript:void(0)" data-flag="songjiang">松江其他</a>
+                            <!-- 青浦 -->
+                            <a href="javascript:void(0)" data-flag="qingpu">青浦</a>
+                            <a href="javascript:void(0)" data-flag="qingpu">青浦其他</a>
+                            <!-- 奉贤 -->
+                            <a href="javascript:void(0)" data-flag="fengxian">南桥</a>
+                            <!-- 上海周边 -->
+                            <a href="javascript:void(0)" data-flag="zhoubian">昆山</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ========================================= -->
+                <!-- ========================================== -->
+                <div class="filter-item">
+                    <div class="title fl">地铁</div>
+                    <div class="region-box" id="regi-box2">
+                        <input class="box-input" id="box-input2" type="text" value="全部" autocomplete="off" readonly="readonly" />
+                        <div class="box-li" id="box-li2">
+                            <a href="javascript:void(0)">全部</a>
+                            <a href="javascript:void(0)" data-flag="1">1号线</a>
+                            <a href="javascript:void(0)" data-flag="2">2号线</a>
+                            <a href="javascript:void(0)" data-flag="3">3号线</a>
+                            <a href="javascript:void(0)" data-flag="4">4号线</a>
+                            <a href="javascript:void(0)" data-flag="5">5号线</a>
+                            <a href="javascript:void(0)" data-flag="5">6号线</a>
+                            <a href="javascript:void(0)" data-flag="7">7号线</a>
+                            <a href="javascript:void(0)" data-flag="8">8号线</a>
+                            <a href="javascript:void(0)" data-flag="9">9号线</a>
+                            <a href="javascript:void(0)" data-flag="10">10号支线</a>
+                            <a href="javascript:void(0)" data-flag="10z">10号主线</a>
+                            <a href="javascript:void(0)" data-flag="11z">11号主线</a>
+                            <a href="javascript:void(0)" data-flag="11">11号支线</a>
+                            <a href="javascript:void(0)" data-flag="12">12号线</a>
+                            <a href="javascript:void(0)" data-flag="13">13号线</a>
+                            <a href="javascript:void(0)" data-flag="16">16号线</a>
+                            <a href="javascript:void(0)" data-flag="c">磁悬浮</a>
+                        </div>
+                        <div class="box-li-x" id="box-lis2" style="display: none;width:110%;">
+                            <a data-flag="1" href="javascript:void(0)">富锦路</a>
+                            <a data-flag="1" href="javascript:void(0)">友谊西路</a>
+                            <a data-flag="1" href="javascript:void(0)">共富新村</a>
+                            <a data-flag="1" href="javascript:void(0)">呼兰路</a>
+                            <a data-flag="1" href="javascript:void(0)">通河新村</a>
+                            <a data-flag="1" href="javascript:void(0)">共康路</a>
+                            <a data-flag="1" href="javascript:void(0)">彭区新村</a>
+                            <a data-flag="1" href="javascript:void(0)">汶水路</a>
+                            <a data-flag="1" href="javascript:void(0)">上海马戏城</a>
+                            <a data-flag="1" href="javascript:void(0)">延长路</a>
+                            <a data-flag="1" href="javascript:void(0)">中山北路</a>
+                            <a data-flag="1" href="javascript:void(0)">上海火车站</a>
+                            <a data-flag="1" href="javascript:void(0)">汉中路</a>
+                            <a data-flag="1" href="javascript:void(0)">新闸路</a>
+                            <a data-flag="1" href="javascript:void(0)">人民广场</a>
+                            <a data-flag="1" href="javascript:void(0)">黄坡南路</a>
+                            <a data-flag="1" href="javascript:void(0)">陕西南路</a>
+                            <a data-flag="1" href="javascript:void(0)">常熟路</a>
+                            <a data-flag="1" href="javascript:void(0)">衡山路</a>
+                            <a data-flag="1" href="javascript:void(0)">徐家汇</a>
+                            <a data-flag="1" href="javascript:void(0)">上海体育馆</a>
+                            <a data-flag="1" href="javascript:void(0)">漕宝路</a>
+                            <a data-flag="1" href="javascript:void(0)">上海南站</a>
+                            <a data-flag="1" href="javascript:void(0)">锦江乐园</a>
+                            <a data-flag="1" href="javascript:void(0)">莲花路</a>
+                            <a data-flag="1" href="javascript:void(0)">外环路</a>
+                            <a data-flag="1" href="javascript:void(0)">莘庄</a>
+                            <!-- == -->
+                            <a data-flag="2" href="javascript:void(0)">徐泾东</a>
+                            <a data-flag="2" href="javascript:void(0)">虹桥火车站</a>
+                            <a data-flag="2" href="javascript:void(0)">虹桥2号航站楼</a>
+                            <a data-flag="2" href="javascript:void(0)">淞虹路</a>
+                            <a data-flag="2" href="javascript:void(0)">北新泾</a>
+                            <a data-flag="2" href="javascript:void(0)">威宁路</a>
+                            <a data-flag="2" href="javascript:void(0)">娄山关路</a>
+                            <a data-flag="2" href="javascript:void(0)">中山公园</a>
+                            <a data-flag="2" href="javascript:void(0)">江苏北路</a>
+                            <a data-flag="2" href="javascript:void(0)">静安寺</a>
+                            <a data-flag="2" href="javascript:void(0)">南京西路</a>
+                            <a data-flag="2" href="javascript:void(0)">人民广场</a>
+                            <a data-flag="2" href="javascript:void(0)">南京东路</a>
+                            <a data-flag="2" href="javascript:void(0)">陆家嘴</a>
+                            <a data-flag="2" href="javascript:void(0)">东昌路</a>
+                            <a data-flag="2" href="javascript:void(0)">世纪大道</a>
+                            <a data-flag="2" href="javascript:void(0)">上海科技馆</a>
+                            <a data-flag="2" href="javascript:void(0)">世纪公园</a>
+                            <a data-flag="2" href="javascript:void(0)">龙阳路</a>
+                            <a data-flag="2" href="javascript:void(0)">张江高科</a>
+                            <a data-flag="2" href="javascript:void(0)">金科路</a>
+                            <a data-flag="2" href="javascript:void(0)">广兰路</a>
+                            <a data-flag="2" href="javascript:void(0)">唐镇</a>
+                            <a data-flag="2" href="javascript:void(0)">创新中路</a>
+                            <a data-flag="2" href="javascript:void(0)">华夏东路</a>
+                            <a data-flag="2" href="javascript:void(0)">川沙</a>
+                            <a data-flag="2" href="javascript:void(0)">凌空路</a>
+                            <a data-flag="2" href="javascript:void(0)">远东大道</a>
+                            <a data-flag="2" href="javascript:void(0)">海天三路</a>
+                            <a data-flag="2" href="javascript:void(0)">浦东国际机场</a>
+                            <!-- == -->
+                            <a data-flag="3" href="javascript:void(0)">上海南站</a>
+                            <a data-flag="3" href="javascript:void(0)">石龙路</a>
+                            <a data-flag="3" href="javascript:void(0)">龙漕路</a>
+                            <a data-flag="3" href="javascript:void(0)">漕溪路</a>
+                            <a data-flag="3" href="javascript:void(0)">宜山路</a>
+                            <a data-flag="3" href="javascript:void(0)">虹桥路</a>
+                            <a data-flag="3" href="javascript:void(0)">延安西路</a>
+                            <a data-flag="3" href="javascript:void(0)">中山公园</a>
+                            <a data-flag="3" href="javascript:void(0)">金沙江路</a>
+                            <a data-flag="3" href="javascript:void(0)">曹杨路</a>
+                            <a data-flag="3" href="javascript:void(0)">镇坪路</a>
+                            <a data-flag="3" href="javascript:void(0)">中潭路</a>
+                            <a data-flag="3" href="javascript:void(0)">上海火车站</a>
+                            <a data-flag="3" href="javascript:void(0)">宝山路</a>
+                            <a data-flag="3" href="javascript:void(0)">东宝兴路</a>
+                            <a data-flag="3" href="javascript:void(0)">虹口足球场</a>
+                            <a data-flag="3" href="javascript:void(0)">赤峰路</a>
+                            <a data-flag="3" href="javascript:void(0)">大柏树</a>
+                            <a data-flag="3" href="javascript:void(0)">江湾城</a>
+                            <a data-flag="3" href="javascript:void(0)">殷高西路</a>
+                            <a data-flag="3" href="javascript:void(0)">长江南路</a>
+                            <a data-flag="3" href="javascript:void(0)">淞发路</a>
+                            <a data-flag="3" href="javascript:void(0)">张华浜</a>
+                            <a data-flag="3" href="javascript:void(0)">淞滨路</a>
+                            <a data-flag="3" href="javascript:void(0)">水产路</a>
+                            <a data-flag="3" href="javascript:void(0)">宝杨路</a>
+                            <a data-flag="3" href="javascript:void(0)">友谊路</a>
+                            <a data-flag="3" href="javascript:void(0)">铁力路</a>
+                            <a data-flag="3" href="javascript:void(0)">江杨北路</a>
+                            <!-- == -->
+                            <a data-flag="4" href="javascript:void(0)">宜山路</a>
+                            <a data-flag="4" href="javascript:void(0)">虹桥路</a>
+                            <a data-flag="4" href="javascript:void(0)">延安西路</a>
+                            <a data-flag="4" href="javascript:void(0)">中山公园</a>
+                            <a data-flag="4" href="javascript:void(0)">金沙江路</a>
+                            <a data-flag="4" href="javascript:void(0)">曹杨路</a>
+                            <a data-flag="4" href="javascript:void(0)">镇坪路</a>
+                            <a data-flag="4" href="javascript:void(0)">中潭路</a>
+                            <a data-flag="4" href="javascript:void(0)">上海火车站</a>
+                            <a data-flag="4" href="javascript:void(0)">宝山路</a>
+                            <a data-flag="4" href="javascript:void(0)">海伦路</a>
+                            <a data-flag="4" href="javascript:void(0)">临平路</a>
+                            <a data-flag="4" href="javascript:void(0)">大连路</a>
+                            <a data-flag="4" href="javascript:void(0)">杨树浦路</a>
+                            <a data-flag="4" href="javascript:void(0)">浦东大道</a>
+                            <a data-flag="4" href="javascript:void(0)">世纪大道</a>
+                            <a data-flag="4" href="javascript:void(0)">浦电路</a>
+                            <a data-flag="4" href="javascript:void(0)">蓝村路</a>
+                            <a data-flag="4" href="javascript:void(0)">塘桥</a>
+                            <a data-flag="4" href="javascript:void(0)">南浦大桥</a>
+                            <a data-flag="4" href="javascript:void(0)">西藏南路</a>
+                            <a data-flag="4" href="javascript:void(0)">鲁班路</a>
+                            <a data-flag="4" href="javascript:void(0)">大木桥路</a>
+                            <a data-flag="4" href="javascript:void(0)">安东路</a>
+                            <a data-flag="4" href="javascript:void(0)">上海体育场</a>
+                            <a data-flag="4" href="javascript:void(0)">上海体育馆</a>
+                            <!-- == -->
+                            <a data-flag="5" href="javascript:void(0)">莘庄</a>
+                            <a data-flag="5" href="javascript:void(0)">春申路</a>
+                            <a data-flag="5" href="javascript:void(0)">银都路</a>
+                            <a data-flag="5" href="javascript:void(0)">颛桥</a>
+                            <a data-flag="5" href="javascript:void(0)">北桥</a>
+                            <a data-flag="5" href="javascript:void(0)">剑川路</a>
+                            <a data-flag="5" href="javascript:void(0)">东川路</a>
+                            <a data-flag="5" href="javascript:void(0)">金平路</a>
+                            <a data-flag="5" href="javascript:void(0)">华宁路</a>
+                            <a data-flag="5" href="javascript:void(0)">文井路</a>
+                            <a data-flag="5" href="javascript:void(0)">闵行开发区</a>
+                            <!-- == -->
+                            <a data-flag="6" href="javascript:void(0)">港城路</a>
+                            <a data-flag="6" href="javascript:void(0)">外高桥保税区北</a>
+                            <a data-flag="6" href="javascript:void(0)">航津路</a>
+                            <a data-flag="6" href="javascript:void(0)">外高桥保税区南</a>
+                            <a data-flag="6" href="javascript:void(0)">洲海路</a>
+                            <a data-flag="6" href="javascript:void(0)">五洲大道</a>
+                            <a data-flag="6" href="javascript:void(0)">东靖路</a>
+                            <a data-flag="6" href="javascript:void(0)">巨峰路</a>
+                            <a data-flag="6" href="javascript:void(0)">五莲路</a>
+                            <a data-flag="6" href="javascript:void(0)">博兴路</a>
+                            <a data-flag="6" href="javascript:void(0)">金桥路</a>
+                            <a data-flag="6" href="javascript:void(0)">云山路</a>
+                            <a data-flag="6" href="javascript:void(0)">德平路</a>
+                            <a data-flag="6" href="javascript:void(0)">北洋泾路</a>
+                            <a data-flag="6" href="javascript:void(0)">民生路</a>
+                            <a data-flag="6" href="javascript:void(0)">源深体育中心</a>
+                            <a data-flag="6" href="javascript:void(0)">世纪大道</a>
+                            <a data-flag="6" href="javascript:void(0)">浦电路</a>
+                            <a data-flag="6" href="javascript:void(0)">蓝村路</a>
+                            <a data-flag="6" href="javascript:void(0)">上海儿童医学中心</a>
+                            <a data-flag="6" href="javascript:void(0)">临沂新村</a>
+                            <a data-flag="6" href="javascript:void(0)">高科西路</a>
+                            <a data-flag="6" href="javascript:void(0)">东明路</a>
+                            <a data-flag="6" href="javascript:void(0)">高青路</a>
+                            <a data-flag="6" href="javascript:void(0)">华夏西路</a>
+                            <a data-flag="6" href="javascript:void(0)">上南路</a>
+                            <a data-flag="6" href="javascript:void(0)">灵岩南路</a>
+                            <a data-flag="6" href="javascript:void(0)">东方体育中心</a>
+                            <!-- == -->
+                            <a data-flag="7" href="javascript:void(0)">花木路</a>
+                            <a data-flag="7" href="javascript:void(0)">龙阳路</a>
+                            <a data-flag="7" href="javascript:void(0)">芳华路</a>
+                            <a data-flag="7" href="javascript:void(0)">锦绣路</a>
+                            <a data-flag="7" href="javascript:void(0)">杨高南路</a>
+                            <a data-flag="7" href="javascript:void(0)">高科西路</a>
+                            <a data-flag="7" href="javascript:void(0)">云台路</a>
+                            <a data-flag="7" href="javascript:void(0)">耀华路</a>
+                            <a data-flag="7" href="javascript:void(0)">长清路</a>
+                            <a data-flag="7" href="javascript:void(0)">后滩</a>
+                            <a data-flag="7" href="javascript:void(0)">中华艺术</a>
+                            <a data-flag="7" href="javascript:void(0)">东安路</a>
+                            <a data-flag="7" href="javascript:void(0)">肇嘉浜路</a>
+                            <a data-flag="7" href="javascript:void(0)">常熟路</a>
+                            <a data-flag="7" href="javascript:void(0)">静安寺</a>
+                            <a data-flag="7" href="javascript:void(0)">昌平路</a>
+                            <a data-flag="7" href="javascript:void(0)">长寿路</a>
+                            <a data-flag="7" href="javascript:void(0)">镇坪路</a>
+                            <a data-flag="7" href="javascript:void(0)">岚皋路</a>
+                            <a data-flag="7" href="javascript:void(0)">新村路</a>
+                            <a data-flag="7" href="javascript:void(0)">大华三路</a>
+                            <a data-flag="7" href="javascript:void(0)">行知路</a>
+                            <a data-flag="7" href="javascript:void(0)">大场镇</a>
+                            <a data-flag="7" href="javascript:void(0)">场中路</a>
+                            <a data-flag="7" href="javascript:void(0)">上大路</a>
+                            <a data-flag="7" href="javascript:void(0)">南陈路</a>
+                            <a data-flag="7" href="javascript:void(0)">上海大学</a>
+                            <a data-flag="7" href="javascript:void(0)">祁华路</a>
+                            <a data-flag="7" href="javascript:void(0)">顾村公园</a>
+                            <a data-flag="7" href="javascript:void(0)">刘行</a>
+                            <a data-flag="7" href="javascript:void(0)">潘广路</a>
+                            <a data-flag="7" href="javascript:void(0)">罗南新村</a>
+                            <a data-flag="7" href="javascript:void(0)">美兰湖</a>
+                            <!-- == -->
+                            <a data-flag="8">沈杜公路</a>
+                            <a data-flag="8" href="javascript:void(0)">联航路</a>
+                            <a data-flag="8" href="javascript:void(0)">江月路</a>
+                            <a data-flag="8" href="javascript:void(0)">浦江镇</a>
+                            <a data-flag="8" href="javascript:void(0)">芦恒路</a>
+                            <a data-flag="8" href="javascript:void(0)">凌兆新村</a>
+                            <a data-flag="8" href="javascript:void(0)">东方体育中心</a>
+                            <a data-flag="8" href="javascript:void(0)">杨思</a>
+                            <a data-flag="8" href="javascript:void(0)">成山路</a>
+                            <a data-flag="8" href="javascript:void(0)">耀华路</a>
+                            <a data-flag="8" href="javascript:void(0)">中华艺术宫</a>
+                            <a data-flag="8" href="javascript:void(0)">西藏南路</a>
+                            <a data-flag="8" href="javascript:void(0)">陆家浜路</a>
+                            <a data-flag="8" href="javascript:void(0)">老西门</a>
+                            <a data-flag="8" href="javascript:void(0)">大世界</a>
+                            <a data-flag="8" href="javascript:void(0)">人民广场</a>
+                            <a data-flag="8" href="javascript:void(0)">曲阜路</a>
+                            <a data-flag="8" href="javascript:void(0)">中兴路</a>
+                            <a data-flag="8" href="javascript:void(0)">西藏北路</a>
+                            <a data-flag="8" href="javascript:void(0)">虹口足球场</a>
+                            <a data-flag="8" href="javascript:void(0)">曲阳路</a>
+                            <a data-flag="8" href="javascript:void(0)">四平路</a>
+                            <a data-flag="8" href="javascript:void(0)">鞍山新村</a>
+                            <a data-flag="8" href="javascript:void(0)">江浦路</a>
+                            <a data-flag="8" href="javascript:void(0)">黄兴路</a>
+                            <a data-flag="8" href="javascript:void(0)">延吉中路</a>
+                            <a data-flag="8" href="javascript:void(0)">黄兴公园</a>
+                            <a data-flag="8" href="javascript:void(0)">翔殷路</a>
+                            <a data-flag="8" href="javascript:void(0)">嫩江路</a>
+                            <a data-flag="8" href="javascript:void(0)">市光路</a>
+                            <!-- == -->
+                            <a data-flag="9" href="javascript:void(0)">杨高中路</a>
+                            <a data-flag="9" href="javascript:void(0)">世纪大道</a>
+                            <a data-flag="9" href="javascript:void(0)">商城路</a>
+                            <a data-flag="9" href="javascript:void(0)">小南门</a>
+                            <a data-flag="9" href="javascript:void(0)">陆家浜路</a>
+                            <a data-flag="9" href="javascript:void(0)">马当路</a>
+                            <a data-flag="9" href="javascript:void(0)">打浦桥</a>
+                            <a data-flag="9" href="javascript:void(0)">嘉善路</a>
+                            <a data-flag="9" href="javascript:void(0)">肇嘉浜路</a>
+                            <a data-flag="9" href="javascript:void(0)">徐家汇</a>
+                            <a data-flag="9" href="javascript:void(0)">宜山路</a>
+                            <a data-flag="9" href="javascript:void(0)">桂林路</a>
+                            <a data-flag="9" href="javascript:void(0)">漕河泾开发区</a>
+                            <a data-flag="9" href="javascript:void(0)">合川路</a>
+                            <a data-flag="9" href="javascript:void(0)">星中路</a>
+                            <a data-flag="9" href="javascript:void(0)">七宝</a>
+                            <a data-flag="9" href="javascript:void(0)">中春路</a>
+                            <a data-flag="9" href="javascript:void(0)">九亭</a>
+                            <a data-flag="9" href="javascript:void(0)">泗泾</a>
+                            <a data-flag="9" href="javascript:void(0)">佘山</a>
+                            <a data-flag="9" href="javascript:void(0)">洞泾</a>
+                            <a data-flag="9" href="javascript:void(0)">松江大学城</a>
+                            <a data-flag="9" href="javascript:void(0)">松江新城</a>
+                            <a data-flag="9" href="javascript:void(0)">松江体育中心</a>
+                            <a data-flag="9" href="javascript:void(0)">醉白池</a>
+                            <a data-flag="9" href="javascript:void(0)">松江南站</a>
+                            <!-- == -->
+                            <a data-flag="10" href="javascript:void(0)">新江湾城</a>
+                            <a data-flag="10" href="javascript:void(0)">殷高东路</a>
+                            <a data-flag="10" href="javascript:void(0)">三门路</a>
+                            <a data-flag="10" href="javascript:void(0)">江湾体育场</a>
+                            <a data-flag="10" href="javascript:void(0)">五角场</a>
+                            <a data-flag="10" href="javascript:void(0)">国权路</a>
+                            <a data-flag="10" href="javascript:void(0)">同济大学</a>
+                            <a data-flag="10" href="javascript:void(0)">四平路</a>
+                            <a data-flag="10" href="javascript:void(0)">邮电新村</a>
+                            <a data-flag="10" href="javascript:void(0)">海伦路</a>
+                            <a data-flag="10" href="javascript:void(0)">四川北路</a>
+                            <a data-flag="10" href="javascript:void(0)">天潼路</a>
+                            <a data-flag="10" href="javascript:void(0)">南京东路</a>
+                            <a data-flag="10" href="javascript:void(0)">豫园</a>
+                            <a data-flag="10" href="javascript:void(0)">老西门</a>
+                            <a data-flag="10" href="javascript:void(0)">新天地</a>
+                            <a data-flag="10" href="javascript:void(0)">陕西南路</a>
+                            <a data-flag="10" href="javascript:void(0)">上海图书馆</a>
+                            <a data-flag="10" href="javascript:void(0)">交通大学</a>
+                            <a data-flag="10" href="javascript:void(0)">虹桥路</a>
+                            <a data-flag="10" href="javascript:void(0)">宋园路</a>
+                            <a data-flag="10" href="javascript:void(0)">伊犁路</a>
+                            <a data-flag="10" href="javascript:void(0)">水城路</a>
+                            <a data-flag="10" href="javascript:void(0)">龙溪路</a>
+                            <a data-flag="10" href="javascript:void(0)">龙柏新村</a>
+                            <a data-flag="10" href="javascript:void(0)">紫藤路</a>
+                            <a data-flag="10" href="javascript:void(0)">航中路</a>
+                            <!-- == -->
+                            <a data-flag="10z" href="javascript:void(0)">新江湾城</a>
+                            <a data-flag="10z" href="javascript:void(0)">殷高东路</a>
+                            <a data-flag="10z" href="javascript:void(0)">三门路</a>
+                            <a data-flag="10z" href="javascript:void(0)">江湾体育场</a>
+                            <a data-flag="10z" href="javascript:void(0)">五角场</a>
+                            <a data-flag="10z" href="javascript:void(0)">国权路</a>
+                            <a data-flag="10z" href="javascript:void(0)">同济大学</a>
+                            <a data-flag="10z" href="javascript:void(0)">四平路</a>
+                            <a data-flag="10z" href="javascript:void(0)">邮电新村</a>
+                            <a data-flag="10z" href="javascript:void(0)">海伦路</a>
+                            <a data-flag="10z" href="javascript:void(0)">四川北路</a>
+                            <a data-flag="10z" href="javascript:void(0)">天潼路</a>
+                            <a data-flag="10z" href="javascript:void(0)">南京东路</a>
+                            <a data-flag="10z" href="javascript:void(0)">豫园</a>
+                            <a data-flag="10z" href="javascript:void(0)">老西门</a>
+                            <a data-flag="10z" href="javascript:void(0)">新天地</a>
+                            <a data-flag="10z" href="javascript:void(0)">陕西南路</a>
+                            <a data-flag="10z" href="javascript:void(0)">上海图书馆</a>
+                            <a data-flag="10z" href="javascript:void(0)">交通大学</a>
+                            <a data-flag="10z" href="javascript:void(0)">虹桥路</a>
+                            <a data-flag="10z" href="javascript:void(0)">宋园路</a>
+                            <a data-flag="10z" href="javascript:void(0)">伊犁路</a>
+                            <a data-flag="10z" href="javascript:void(0)">水城路</a>
+                            <a data-flag="10z" href="javascript:void(0)">龙溪路</a>
+                            <a data-flag="10z" href="javascript:void(0)">上海动物园</a>
+                            <a data-flag="10z" href="javascript:void(0)">虹桥1号航站楼</a>
+                            <a data-flag="10z" href="javascript:void(0)">虹桥2号航站楼</a>
+                            <a data-flag="10z" href="javascript:void(0)">虹桥火车站</a>
+                            <!-- == -->
+                            <a data-flag="11z" href="javascript:void(0)">迪士尼</a>
+                            <a data-flag="11z" href="javascript:void(0)">康新公路</a>
+                            <a data-flag="11z" href="javascript:void(0)">秀沿路</a>
+                            <a data-flag="11z" href="javascript:void(0)">罗山路</a>
+                            <a data-flag="11z" href="javascript:void(0)">御桥</a>
+                            <a data-flag="11z" href="javascript:void(0)">浦三路</a>
+                            <a data-flag="11z" href="javascript:void(0)">三林东</a>
+                            <a data-flag="11z" href="javascript:void(0)">三林</a>
+                            <a data-flag="11z" href="javascript:void(0)">东方体育中心</a>
+                            <a data-flag="11z" href="javascript:void(0)">龙耀</a>
+                            <a data-flag="11z" href="javascript:void(0)">云锦路</a>
+                            <a data-flag="11z" href="javascript:void(0)">龙华</a>
+                            <a data-flag="11z" href="javascript:void(0)">上海游泳馆</a>
+                            <a data-flag="11z" href="javascript:void(0)">徐家汇</a>
+                            <a data-flag="11z" href="javascript:void(0)">交通大学</a>
+                            <a data-flag="11z" href="javascript:void(0)">江苏路</a>
+                            <a data-flag="11z" href="javascript:void(0)">隆德路</a>
+                            <a data-flag="11z" href="javascript:void(0)">曹杨路</a>
+                            <a data-flag="11z" href="javascript:void(0)">枫桥路</a>
+                            <a data-flag="11z" href="javascript:void(0)">真如</a>
+                            <a data-flag="11z" href="javascript:void(0)">上海西站</a>
+                            <a data-flag="11z" href="javascript:void(0)">李子园</a>
+                            <a data-flag="11z" href="javascript:void(0)">祁连山路</a>
+                            <a data-flag="11z" href="javascript:void(0)">武威路</a>
+                            <a data-flag="11z" href="javascript:void(0)">桃浦新村</a>
+                            <a data-flag="11z" href="javascript:void(0)">南翔</a>
+                            <a data-flag="11z" href="javascript:void(0)">马陆</a>
+                            <a data-flag="11z" href="javascript:void(0)">嘉定新城</a>
+                            <a data-flag="11z" href="javascript:void(0)">白银路</a>
+                            <a data-flag="11z" href="javascript:void(0)">嘉定西</a>
+                            <a data-flag="11z" href="javascript:void(0)">嘉定北</a>
+                            <!-- == -->
+                            <a data-flag="11" href="javascript:void(0)">迪士尼</a>
+                            <a data-flag="11" href="javascript:void(0)">康新公路</a>
+                            <a data-flag="11" href="javascript:void(0)">秀沿路</a>
+                            <a data-flag="11" href="javascript:void(0)">罗山路</a>
+                            <a data-flag="11" href="javascript:void(0)">御桥</a>
+                            <a data-flag="11" href="javascript:void(0)">浦三路</a>
+                            <a data-flag="11" href="javascript:void(0)">三林东</a>
+                            <a data-flag="11" href="javascript:void(0)">三林</a>
+                            <a data-flag="11" href="javascript:void(0)">东方体育中心</a>
+                            <a data-flag="11" href="javascript:void(0)">龙耀</a>
+                            <a data-flag="11" href="javascript:void(0)">云锦路</a>
+                            <a data-flag="11" href="javascript:void(0)">龙华</a>
+                            <a data-flag="11" href="javascript:void(0)">上海游泳馆</a>
+                            <a data-flag="11" href="javascript:void(0)">徐家汇</a>
+                            <a data-flag="11" href="javascript:void(0)">交通大学</a>
+                            <a data-flag="11" href="javascript:void(0)">江苏路</a>
+                            <a data-flag="11" href="javascript:void(0)">隆德路</a>
+                            <a data-flag="11" href="javascript:void(0)">曹杨路</a>
+                            <a data-flag="11" href="javascript:void(0)">枫桥路</a>
+                            <a data-flag="11" href="javascript:void(0)">真如</a>
+                            <a data-flag="11" href="javascript:void(0)">上海西站</a>
+                            <a data-flag="11" href="javascript:void(0)">李子园</a>
+                            <a data-flag="11" href="javascript:void(0)">祁连山路</a>
+                            <a data-flag="11" href="javascript:void(0)">武威路</a>
+                            <a data-flag="11" href="javascript:void(0)">桃浦新村</a>
+                            <a data-flag="11" href="javascript:void(0)">南翔</a>
+                            <a data-flag="11" href="javascript:void(0)">马陆</a>
+                            <a data-flag="11" href="javascript:void(0)">嘉定新城</a>
+                            <a data-flag="11" href="javascript:void(0)">上海赛车场</a>
+                            <a data-flag="11" href="javascript:void(0)">昌吉东路</a>
+                            <a data-flag="11" href="javascript:void(0)">上海汽车城</a>
+                            <a data-flag="11" href="javascript:void(0)">安亭</a>
+                            <a data-flag="11" href="javascript:void(0)">兆丰路</a>
+                            <a data-flag="11" href="javascript:void(0)">光明路</a>
+                            <a data-flag="11" href="javascript:void(0)">花桥</a>
+                            <!-- == -->
+                            <a data-flag="12" href="javascript:void(0)">七莘路</a>
+                            <a data-flag="12" href="javascript:void(0)">虹莘路</a>
+                            <a data-flag="12" href="javascript:void(0)">顾戴路</a>
+                            <a data-flag="12" href="javascript:void(0)">东兰路</a>
+                            <a data-flag="12" href="javascript:void(0)">虹梅路</a>
+                            <a data-flag="12" href="javascript:void(0)">虹漕路</a>
+                            <a data-flag="12" href="javascript:void(0)">桂林公园</a>
+                            <a data-flag="12" href="javascript:void(0)">漕宝路</a>
+                            <a data-flag="12" href="javascript:void(0)">龙漕路</a>
+                            <a data-flag="12" href="javascript:void(0)">龙华</a>
+                            <a data-flag="12" href="javascript:void(0)">中华艺术</a>
+                            <a data-flag="12" href="javascript:void(0)">大木桥路</a>
+                            <a data-flag="12" href="javascript:void(0)">嘉善路</a>
+                            <a data-flag="12" href="javascript:void(0)">陕西南路</a>
+                            <a data-flag="12" href="javascript:void(0)">南京西路</a>
+                            <a data-flag="12" href="javascript:void(0)">汉中路</a>
+                            <a data-flag="12" href="javascript:void(0)">曲阜路</a>
+                            <a data-flag="12" href="javascript:void(0)">天潼路</a>
+                            <a data-flag="12" href="javascript:void(0)">国际客运中心</a>
+                            <a data-flag="12" href="javascript:void(0)">提篮桥</a>
+                            <a data-flag="12" href="javascript:void(0)">大连路</a>
+                            <a data-flag="12" href="javascript:void(0)">江浦公园</a>
+                            <a data-flag="12" href="javascript:void(0)">宁国路</a>
+                            <a data-flag="12" href="javascript:void(0)">隆昌路</a>
+                            <a data-flag="12" href="javascript:void(0)">爱国路</a>
+                            <a data-flag="12" href="javascript:void(0)">复兴岛</a>
+                            <a data-flag="12" href="javascript:void(0)">东陆路</a>
+                            <a data-flag="12" href="javascript:void(0)">巨峰路</a>
+                            <a data-flag="12" href="javascript:void(0)">杨高北路</a>
+                            <a data-flag="12" href="javascript:void(0)">金京路</a>
+                            <a data-flag="12" href="javascript:void(0)">申江路</a>
+                            <a data-flag="12" href="javascript:void(0)">金海路</a>
+                            <!-- == -->
+                            <a data-flag="13" href="javascript:void(0)">金运路</a>
+                            <a data-flag="13" href="javascript:void(0)">金沙江西路</a>
+                            <a data-flag="13" href="javascript:void(0)">丰庄</a>
+                            <a data-flag="13" href="javascript:void(0)">祁连山南路</a>
+                            <a data-flag="13" href="javascript:void(0)">真北路</a>
+                            <a data-flag="13" href="javascript:void(0)">大渡河路</a>
+                            <a data-flag="13" href="javascript:void(0)">金沙江路</a>
+                            <a data-flag="13" href="javascript:void(0)">隆德路</a>
+                            <a data-flag="13" href="javascript:void(0)">武宁路</a>
+                            <a data-flag="13" href="javascript:void(0)">长寿路</a>
+                            <a data-flag="13" href="javascript:void(0)">江宁路</a>
+                            <a data-flag="13" href="javascript:void(0)">汉中路</a>
+                            <a data-flag="13" href="javascript:void(0)">自然博物馆</a>
+                            <a data-flag="13" href="javascript:void(0)">南京西路</a>
+                            <a data-flag="13" href="javascript:void(0)">淮海中路</a>
+                            <a data-flag="13" href="javascript:void(0)">新天地</a>
+                            <a data-flag="13" href="javascript:void(0)">马当路</a>
+                            <a data-flag="13" href="javascript:void(0)">世博会博物馆</a>
+                            <a data-flag="13" href="javascript:void(0)">世博大道</a>
+                            <!-- == -->
+
+                            <a data-flag="16" href="javascript:void(0)">龙阳路</a>
+                            <a data-flag="16" href="javascript:void(0)">华夏中路</a>
+                            <a data-flag="16" href="javascript:void(0)">罗山路</a>
+                            <a data-flag="16" href="javascript:void(0)">周浦东</a>
+                            <a data-flag="16" href="javascript:void(0)">鹤沙航城</a>
+                            <a data-flag="16" href="javascript:void(0)">航头东</a>
+                            <a data-flag="16" href="javascript:void(0)">新场</a>
+                            <a data-flag="16" href="javascript:void(0)">野生动物园</a>
+                            <a data-flag="16" href="javascript:void(0)">惠南</a>
+                            <a data-flag="16" href="javascript:void(0)">惠南东</a>
+                            <a data-flag="16" href="javascript:void(0)">书院</a>
+                            <a data-flag="16" href="javascript:void(0)">临港大道</a>
+                            <a data-flag="16" href="javascript:void(0)">滴水湖</a>
+                            <!-- == -->
+                            <a data-flag="cc" href="javascript:void(0)" >龙阳路</a>
+                            <a data-flag="cc" href="javascript:void(0)" >浦东国际机场</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ========================================= -->
+                <!-- ========================================== -->
+                <div class="filter-item">
+                    <div class="title fl">价格</div>
+                    <div class="region-box" id="regi-box3">
+                        <input class="box-input" id="box-input3" type="text" value="全部" autocomplete="off" readonly="readonly" />
+                        <div class="box-li" id="box-li3">
+                            <a href="javascript:void(0)" data-flag="dj">按单价</a>
+                            <a href="javascript:void(0)" data-flag="zj">按总价</a>
+                        </div>
+                        <div class="box-li-x" id="box-lis3" style="display: none; width:110%; height:290px;">
+                            <a data-flag="dj" href="javascript:void(0)">全部</a>
+                            <a data-flag="dj" href="javascript:void(0)">0-0.5万元/月</a>
+                            <a data-flag="dj" href="javascript:void(0)">0.5-1.5万元/月</a>
+                            <a data-flag="dj" href="javascript:void(0)">1.5-3万元/月</a>
+                            <a data-flag="dj" href="javascript:void(0)">3-5万元/月</a>
+                            <a data-flag="dj" href="javascript:void(0)">5-10万元/月</a>
+                            <a data-flag="dj" href="javascript:void(0)">10万元/月以上</a>
+                            <a data-flag="zj" href="javascript:void(0)">全部</a>
+                            <a data-flag="zj" href="javascript:void(0)">0-3元/m²·天</a>
+                            <a data-flag="zj" href="javascript:void(0)">3-4元/m²·天</a>
+                            <a data-flag="zj" href="javascript:void(0)">4-5元/m²·天</a>
+                            <a data-flag="zj" href="javascript:void(0)">5-7元/m²·天</a>
+                            <a data-flag="zj" href="javascript:void(0)">7-9元/m²·天</a>
+                            <a data-flag="zj" href="javascript:void(0)">9-12元/m²·天</a>
+                            <a data-flag="zj" href="javascript:void(0)">12元/m²·天以上</a>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- ========================================= -->
+                <!-- ========================================== -->
+                <div class="filter-item">
+                    <div class="title fl">类型</div>
+                    <div class="region-box" id="regi-box4">
+                        <input class="box-input" id="box-input4" type="text" value="全部" autocomplete="off" readonly="readonly" />
+                        <div class="box-li" id="box-li4">
+                            <a href="javascript:void(0)">全部</a>
+                            <a href="javascript:void(0)">普通办公</a>
+                            <a href="javascript:void(0)">共享办公</a>
+                            <a href="javascript:void(0)">创意园区</a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- ========================================= -->
+                <!-- ========================================== -->
+                <div class="filter-item">
+                    <div class="title fl">装修</div>
+                    <div class="region-box" id="regi-box5">
+                        <input class="box-input" id="box-input5" type="text" value="全部" autocomplete="off" readonly="readonly" />
+                        <div class="box-li" id="box-li5">
+                            <a href="javascript:void(0)">全部</a>
+                            <a href="javascript:void(0)">豪华装修</a>
+                            <a href="javascript:void(0)">精装修</a>
+                            <a href="javascript:void(0)">中等装修</a>
+                            <a href="javascript:void(0)">简装修</a>
+                            <a href="javascript:void(0)">标准装修</a>
+                            <a href="javascript:void(0)">毛坯</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-item">
+                    <div class="title fl">面积</div>
+                    <div class="region-box" id="regi-box6">
+                        <input class="box-input" id="box-input6" type="text" value="全部" autocomplete="off" readonly="readonly" />
+                        <div class="box-li" id="box-li6">
+                            <a href="javascript:void(0)">全部</a>
+                            <a href="javascript:void(0)">0-100m²</a>
+                            <a href="javascript:void(0)">100-300m²</a>
+                            <a href="javascript:void(0)">300-500m²</a>
+                            <a href="javascript:void(0)">500-1000m²</a>
+                            <a href="javascript:void(0)">1000m² 以上</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-but">
+                    <button class="but-a-rem" onclick="rease()">清除所有条件</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="haert">
+        <div style="width: 100%;height:100px; border: 1px solid #ccc;">通用头部</div>
+    </div>
+    <div class="map-index">
+        <div class="map-ul" id="map-ul">
+            <div class="map-ultab">
+                为您找到 <b>2599</b>
+                个楼盘
+            </div>
+            <div class="map-ultab map-shanxuan">
+                <div class="mapssxx">
+                    <span class="map-moren">默认</span>
+                    <span>按价格 ↑↓</span>
+                </div>
+                <div class="maprrr">
+                    <button class="but-a-rem">☵ 列表找房</button>
+                </div>
+
+            </div>
+            <div class="mapFind-list">
+                <ul class="ul-con">
+                    <li class="clearfix">
+                        <div class="mapFind-list-img">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="img/xiangqing_3.jpg" width="180"></a>
+                        </div>
+                        <div class="mapFind-list-box">
+                            <h1 class="mapFind-list-title">
+                                <a target="_blank" href="javascript:void(0)">江苏大厦</a>
+                            </h1>
+                            <h3 class="mapjiage">6.8元/m²⋅天</h3>
+                            <ul class="mapxiangxi">
+                                <li>地址：[长宁 - 虹桥火车站]申长路688号</li>
+                                <li>地铁：距离10号线主线虹桥火车站约594米</li>
+                                <li>可租面积：24 - 1400 m²</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="mapFind-list-img">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="img/xiangqing_3.jpg" width="180"></a>
+                        </div>
+                        <div class="mapFind-list-box">
+                            <h1 class="mapFind-list-title">
+                                <a target="_blank" href="javascript:void(0)">江苏大厦</a>
+                            </h1>
+                            <h3 class="mapjiage">6.8元/m²⋅天</h3>
+                            <ul class="mapxiangxi">
+                                <li>地址：[长宁 - 虹桥火车站]申长路688号</li>
+                                <li>地铁：距离10号线主线虹桥火车站约594米</li>
+                                <li>可租面积：24 - 1400 m²</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="mapFind-list-img">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="img/xiangqing_3.jpg" width="180"></a>
+                        </div>
+                        <div class="mapFind-list-box">
+                            <h1 class="mapFind-list-title">
+                                <a target="_blank" href="javascript:void(0)">江苏大厦</a>
+                            </h1>
+                            <h3 class="mapjiage">6.8元/m²⋅天</h3>
+                            <ul class="mapxiangxi">
+                                <li>地址：[长宁 - 虹桥火车站]申长路688号</li>
+                                <li>地铁：距离10号线主线虹桥火车站约594米</li>
+                                <li>可租面积：24 - 1400 m²</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="mapFind-list-img">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="img/xiangqing_3.jpg" width="180"></a>
+                        </div>
+                        <div class="mapFind-list-box">
+                            <h1 class="mapFind-list-title">
+                                <a target="_blank" href="javascript:void(0)">江苏大厦</a>
+                            </h1>
+                            <h3 class="mapjiage">6.8元/m²⋅天</h3>
+                            <ul class="mapxiangxi">
+                                <li>地址：[长宁 - 虹桥火车站]申长路688号</li>
+                                <li>地铁：距离10号线主线虹桥火车站约594米</li>
+                                <li>可租面积：24 - 1400 m²</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="mapFind-list-img">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="img/xiangqing_3.jpg" width="180"></a>
+                        </div>
+                        <div class="mapFind-list-box">
+                            <h1 class="mapFind-list-title">
+                                <a target="_blank" href="javascript:void(0)">江苏大厦</a>
+                            </h1>
+                            <h3 class="mapjiage">6.8元/m²⋅天</h3>
+                            <ul class="mapxiangxi">
+                                <li>地址：[长宁 - 虹桥火车站]申长路688号</li>
+                                <li>地铁：距离10号线主线虹桥火车站约594米</li>
+                                <li>可租面积：24 - 1400 m²</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="mapFind-list-img">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="img/xiangqing_3.jpg" width="180"></a>
+                        </div>
+                        <div class="mapFind-list-box">
+                            <h1 class="mapFind-list-title">
+                                <a target="_blank" href="javascript:void(0)">江苏大厦</a>
+                            </h1>
+                            <h3 class="mapjiage">6.8元/m²⋅天</h3>
+                            <ul class="mapxiangxi">
+                                <li>地址：[长宁 - 虹桥火车站]申长路688号</li>
+                                <li>地铁：距离10号线主线虹桥火车站约594米</li>
+                                <li>可租面积：24 - 1400 m²</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="mapFind-list-img">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="img/xiangqing_3.jpg" width="180"></a>
+                        </div>
+                        <div class="mapFind-list-box">
+                            <h1 class="mapFind-list-title">
+                                <a target="_blank" href="javascript:void(0)">江苏大厦</a>
+                            </h1>
+                            <h3 class="mapjiage">6.8元/m²⋅天</h3>
+                            <ul class="mapxiangxi">
+                                <li>地址：[长宁 - 虹桥火车站]申长路688号</li>
+                                <li>地铁：距离10号线主线虹桥火车站约594米</li>
+                                <li>可租面积：24 - 1400 m²</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="mapFind-list-img">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="img/xiangqing_3.jpg" width="180"></a>
+                        </div>
+                        <div class="mapFind-list-box">
+                            <h1 class="mapFind-list-title">
+                                <a target="_blank" href="javascript:void(0)">江苏大厦</a>
+                            </h1>
+                            <h3 class="mapjiage">6.8元/m²⋅天</h3>
+                            <ul class="mapxiangxi">
+                                <li>地址：[长宁 - 虹桥火车站]申长路688号</li>
+                                <li>地铁：距离10号线主线虹桥火车站约594米</li>
+                                <li>可租面积：24 - 1400 m²</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="mapFind-list-img">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="img/xiangqing_3.jpg" width="180"></a>
+                        </div>
+                        <div class="mapFind-list-box">
+                            <h1 class="mapFind-list-title">
+                                <a target="_blank" href="javascript:void(0)">江苏大厦</a>
+                            </h1>
+                            <h3 class="mapjiage">6.8元/m²⋅天</h3>
+                            <ul class="mapxiangxi">
+                                <li>地址：[长宁 - 虹桥火车站]申长路688号</li>
+                                <li>地铁：距离10号线主线虹桥火车站约594米</li>
+                                <li>可租面积：24 - 1400 m²</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="mapFind-list-img">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="img/xiangqing_3.jpg" width="180"></a>
+                        </div>
+                        <div class="mapFind-list-box">
+                            <h1 class="mapFind-list-title">
+                                <a target="_blank" href="javascript:void(0)">江苏大厦</a>
+                            </h1>
+                            <h3 class="mapjiage">6.8元/m²⋅天</h3>
+                            <ul class="mapxiangxi">
+                                <li>地址：[长宁 - 虹桥火车站]申长路688号</li>
+                                <li>地铁：距离10号线主线虹桥火车站约594米</li>
+                                <li>可租面积：24 - 1400 m²</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="mapFind-list-img">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="img/xiangqing_3.jpg" width="180"></a>
+                        </div>
+                        <div class="mapFind-list-box">
+                            <h1 class="mapFind-list-title">
+                                <a target="_blank" href="javascript:void(0)">江苏大厦</a>
+                            </h1>
+                            <h3 class="mapjiage">6.8元/m²⋅天</h3>
+                            <ul class="mapxiangxi">
+                                <li>地址：[长宁 - 虹桥火车站]申长路688号</li>
+                                <li>地铁：距离10号线主线虹桥火车站约594米</li>
+                                <li>可租面积：24 - 1400 m²</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="mapFind-list-img">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="img/xiangqing_3.jpg" width="180"></a>
+                        </div>
+                        <div class="mapFind-list-box">
+                            <h1 class="mapFind-list-title">
+                                <a target="_blank" href="javascript:void(0)">江苏大厦</a>
+                            </h1>
+                            <h3 class="mapjiage">6.8元/m²⋅天</h3>
+                            <ul class="mapxiangxi">
+                                <li>地址：[长宁 - 虹桥火车站]申长路688号</li>
+                                <li>地铁：距离10号线主线虹桥火车站约594米</li>
+                                <li>可租面积：24 - 1400 m²</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="mapFind-list-img">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="img/xiangqing_3.jpg" width="180"></a>
+                        </div>
+                        <div class="mapFind-list-box">
+                            <h1 class="mapFind-list-title">
+                                <a target="_blank" href="javascript:void(0)">江苏大厦</a>
+                            </h1>
+                            <h3 class="mapjiage">6.8元/m²⋅天</h3>
+                            <ul class="mapxiangxi">
+                                <li>地址：[长宁 - 虹桥火车站]申长路688号</li>
+                                <li>地铁：距离10号线主线虹桥火车站约594米</li>
+                                <li>可租面积：24 - 1400 m²</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="mapFind-list-img">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="img/xiangqing_3.jpg" width="180"></a>
+                        </div>
+                        <div class="mapFind-list-box">
+                            <h1 class="mapFind-list-title">
+                                <a target="_blank" href="javascript:void(0)">江苏大厦</a>
+                            </h1>
+                            <h3 class="mapjiage">6.8元/m²⋅天</h3>
+                            <ul class="mapxiangxi">
+                                <li>地址：[长宁 - 虹桥火车站]申长路688号</li>
+                                <li>地铁：距离10号线主线虹桥火车站约594米</li>
+                                <li>可租面积：24 - 1400 m²</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="mapFind-list-img">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="img/xiangqing_3.jpg" width="180"></a>
+                        </div>
+                        <div class="mapFind-list-box">
+                            <h1 class="mapFind-list-title">
+                                <a target="_blank" href="javascript:void(0)">江苏大厦</a>
+                            </h1>
+                            <h3 class="mapjiage">6.8元/m²⋅天</h3>
+                            <ul class="mapxiangxi">
+                                <li>地址：[长宁 - 虹桥火车站]申长路688号</li>
+                                <li>地铁：距离10号线主线虹桥火车站约594米</li>
+                                <li>可租面积：24 - 1400 m²</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="mapFind-list-img">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="img/xiangqing_3.jpg" width="180"></a>
+                        </div>
+                        <div class="mapFind-list-box">
+                            <h1 class="mapFind-list-title">
+                                <a target="_blank" href="javascript:void(0)">江苏大厦</a>
+                            </h1>
+                            <h3 class="mapjiage">6.8元/m²⋅天</h3>
+                            <ul class="mapxiangxi">
+                                <li>地址：[长宁 - 虹桥火车站]申长路688号</li>
+                                <li>地铁：距离10号线主线虹桥火车站约594米</li>
+                                <li>可租面积：24 - 1400 m²</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="mapFind-list-img">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="img/xiangqing_3.jpg" width="180"></a>
+                        </div>
+                        <div class="mapFind-list-box">
+                            <h1 class="mapFind-list-title">
+                                <a target="_blank" href="javascript:void(0)">江苏大厦</a>
+                            </h1>
+                            <h3 class="mapjiage">6.8元/m²⋅天</h3>
+                            <ul class="mapxiangxi">
+                                <li>地址：[长宁 - 虹桥火车站]申长路688号</li>
+                                <li>地铁：距离10号线主线虹桥火车站约594米</li>
+                                <li>可租面积：24 - 1400 m²</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <span class="loding">加载中...</span>
+                </ul>
+            </div>
+            <div class="toogc" onclick="toogmap()">＜</div>
+        </div>
+
+        <div class="toogcs" onclick="toogmaps()">＞</div>
+
+        <div class="map-ifra">
+            <iframe id="mapif" src="http://ditu.amap.com/" frameborder="0" width="100%" height="1000px;"></iframe>
+        </div>
+    </div>
+</body>
+</html>

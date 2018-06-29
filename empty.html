@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <title>空</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" href="meat_logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/nformation.css">
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
+    <script type="text/javascript" src="js/layer.js"></script>
+    <style>
+       .rightBtn{
+        background-color: #33c76e !important;
+        height: 28px;
+        line-height: 28px;
+       }
+       .result-box {
+        padding: 79px 0;
+       }
+        .rightBtn:hover{
+        background-color: #47a26b !important;
+       }
+       .result-p1 i{color: #008033}
+       .xuqiu{width: 100%;padding: 5px 0;color: #737373;border-bottom: 4px #f5f8ff solid;font-size: 14px;}
+    </style>
+</head>
+<body>
+    <div class="list-left fl mt-20">
+        <!--   <div class="city-card clearfix">
+        <a href="javascript:void(0)" id="a_show" class="city-card-close icon">关闭</a>
+        <span title="人民广场写字楼" class="city-card-name">
+            人民广场写字楼 <i class="i-1">（均价8.42元/m²⋅天）</i>
+        </span>
+        <dl class="city-card-dl">
+            <dt class="hover">
+                1 <em class="em-1 icon"></em>
+                <div class="city-card-hot">
+                    <p class="p1">黄浦热门商圈TOP3</p>
+                    <ul>
+                        <li>
+                            <a target="_blank" href="javascript:void(0)"> <em class="em1 icon">top1</em>
+                                人民广场
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="javascript:void(0)">
+                                <em class="em2 icon">top2</em>
+                                外滩
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="javascript:void(0)">
+                                <em class="em3 icon">top3</em>
+                                南京东路
+                            </a>
+                        </li>
+
+                    </ul>
+                    <em class="tip-c1">◆</em>
+                    <em class="tip-c2">◆</em>
+                </div>
+            </dt>
+            <dd>热度排名</dd>
+        </dl>
+        <dl class="city-card-dl">
+            <dt>320</dt>
+            <dd>用户30天内预约看房</dd>
+        </dl>
+        <dl class="city-card-dl">
+            <dt>54</dt>
+            <dd>用户正在浏览</dd>
+        </dl>
+        <dl class="city-card-dl">
+            <dt>940</dt>
+            <dd>套房源待租</dd>
+        </dl>
+    </div>
+    -->
+    <!-- 收藏user id -->
+    <input type="hidden" id="uid" value="10246">
+    <div class="list-box">
+        <div class="tab-nav clearfix tab-nav_top">
+            <a class="a1 cur"  href="javascript:void(0)">默认排序</a>
+            <a class="a1" href="javascript:void(0)">
+                价格
+                <em class="icon em1"></em>
+                <em class="icon em2"></em>
+            </a>
+            <a class="a1" href="javascript:void(0)">推荐热度</a>
+            <span class="s1">
+                共有 <i class="i1">0</i>
+                个楼盘满足您的需求
+            </span>
+        </div>
+        <div class="result-box">
+            <p class="result-p1">
+                Sorry,暂无满足您筛选条件的房源，让顾问帮您找找看？联系顾问：
+                <i>888-888-8888</i>
+                或让顾问联系您：
+            </p>
+            <div class="result-con">
+                <div class="result-label">
+                    <label>
+                        <input class="input-txt" name="" placeholder="请输入您的手机号码" id="noResult_txtPhone" value="" maxlength="11" type="text">
+                        <a href="javascript:void(0);" class="rightBtn" id="noResult_subBtn">请顾问联系我</a>
+                    </label>
+                </div>
+
+            </div>
+            <div></div>
+        </div>
+
+        <ul class="list-con">
+            <div class="xuqiu">
+                <p class="p1">根据您的需求，系统为您推荐以下楼盘：</p>
+            </div>
+            <!-- 1 -->
+            <li class="clearfix">
+                <div class="list-img">
+                    <a target="_blank" href="page.html">
+                        <img src="images/nformation/ming_zhu.jpg" height="160" width="240"></a>
+                </div>
+                <div class="list-content">
+                    <h1 class="h1-title">
+                        <a target="_blank" href="javascript:void(0)">明天广场</a>
+                    </h1>
+                    <p class="p1">
+                        <i class="i4">地址：</i>
+                        [
+                        <a target="_blank" href="javascript:void(0)">黄浦</a>
+                        ]&nbsp;-&nbsp;[
+                        <a target="_blank" href="javascript:void(0)">人民广场</a>
+                        ]
+                        <i class="i1">|</i>
+                        南京西路399号; 距离8号线人民广场约511米
+                    </p>
+
+                    <p class="p1">
+                        <i class="i4">人气：</i>
+                        39位用户正在关注,33次预约看房
+                    </p>
+
+                    <p class="p1">
+                        <i class="i4">面积：</i>
+                        85 - 1500m²
+                    </p>
+                    <span class="s1">
+                        <i class="i2">7.8</i>
+                        元/m²⋅天
+                    </span>
+                    <a title="收藏该楼盘到会员中心" href="javascript:void(0)" class="a-collect">
+                        <em class="icon">收藏</em>
+                    </a>
+                    <div class="list-more">
+                        <p class="p1">
+                            <a href="javascript:void(0)" target="_blank">满足条件44套</a>
+                        </p>
+                        <ul class="list-morebox clearfix">
+                            <li>
+                                <a class="a-tab" target="_blank" href="javascript:void(0)">728m²</a>
+                                <a target="_blank" href="javascript:void(0)">
+                                    <dl class="dl-img">
+                                        <dt>
+                                            <img src="images/nformation/ming_728.jpg">
+                                            <i class="i1">中等装修</i>
+                                        </dt>
+                                        <dd>728m²&nbsp;|&nbsp;9元/m²⋅天&nbsp;</dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="a-tab" target="_blank" href="javascript:void(0)">246m²</a>
+                                <a target="_blank" href="javascript:void(0)">
+                                    <dl class="dl-img">
+                                        <dt>
+                                            <img src="images/nformation/ming_246.jpg">
+                                            <i class="i1">中等装修</i>
+                                        </dt>
+                                        <dd>246m²&nbsp;|&nbsp;9元/m²⋅天&nbsp;</dd>
+                                    </dl>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a rel="nofollow" href="javascript:void(0)" target="_blank" class="a-tab">更多&gt;&gt;</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tagbox">
+                        <div class="tag">
+                            <span class="s1">地铁10分钟</span>
+                        </div>
+                        <div class="tag">
+                            <span class="s2">热门楼盘</span>
+                        </div>
+                        <div class="tag">
+                            <span class="s3">地铁10分钟</span>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+            <!-- 2 -->
+            <li class="clearfix">
+                <div class="list-img">
+                    <a target="_blank" href="javascript:void(0)">
+                        <img src="images/nformation/ming_zhu.jpg" height="160" width="240"></a>
+                </div>
+                <div class="list-content">
+                    <h1 class="h1-title">
+                        <a target="_blank" href="javascript:void(0)">明天广场</a>
+                    </h1>
+                    <p class="p1">
+                        <i class="i4">地址：</i>
+                        [
+                        <a target="_blank" href="javascript:void(0)">黄浦</a>
+                        ]&nbsp;-&nbsp;[
+                        <a target="_blank" href="javascript:void(0)">人民广场</a>
+                        ]
+                        <i class="i1">|</i>
+                        南京西路399号; 距离8号线人民广场约511米
+                    </p>
+
+                    <p class="p1">
+                        <i class="i4">人气：</i>
+                        39位用户正在关注,33次预约看房
+                    </p>
+
+                    <p class="p1">
+                        <i class="i4">面积：</i>
+                        85 - 1500m²
+                    </p>
+                    <span class="s1">
+                        <i class="i2">7.8</i>
+                        元/m²⋅天
+                    </span>
+                    <a title="收藏该楼盘到会员中心" href="javascript:void(0)" class="a-collect">
+                        <em class="icon">收藏</em>
+                    </a>
+                    <div class="list-more">
+                        <p class="p1">
+                            <a href="javascript:void(0)" target="_blank">满足条件44套</a>
+                        </p>
+                        <ul class="list-morebox clearfix">
+                            <li>
+                                <a class="a-tab" target="_blank" href="javascript:void(0)">728m²</a>
+                                <a target="_blank" href="javascript:void(0)">
+                                    <dl class="dl-img">
+                                        <dt>
+                                            <img src="images/nformation/ming_728.jpg">
+                                            <i class="i1">中等装修</i>
+                                        </dt>
+                                        <dd>728m²&nbsp;|&nbsp;9元/m²⋅天&nbsp;</dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="a-tab" target="_blank" href="javascript:void(0)">246m²</a>
+                                <a target="_blank" href="javascript:void(0)">
+                                    <dl class="dl-img">
+                                        <dt>
+                                            <img src="images/nformation/ming_246.jpg">
+                                            <i class="i1">中等装修</i>
+                                        </dt>
+                                        <dd>246m²&nbsp;|&nbsp;9元/m²⋅天&nbsp;</dd>
+                                    </dl>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a rel="nofollow" href="javascript:void(0)" target="_blank" class="a-tab">更多&gt;&gt;</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tagbox">
+                        <div class="tag">
+                            <span class="s1">地铁10分钟</span>
+                        </div>
+                        <div class="tag">
+                            <span class="s2">热门楼盘</span>
+                        </div>
+                        <div class="tag">
+                            <span class="s3">地铁10分钟</span>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+            <!-- 3 -->
+            <li class="clearfix">
+                <div class="list-img">
+                    <a target="_blank" href="javascript:void(0)">
+                        <img src="images/nformation/ming_zhu.jpg" height="160" width="240"></a>
+                </div>
+                <div class="list-content">
+                    <h1 class="h1-title">
+                        <a target="_blank" href="javascript:void(0)">明天广场</a>
+                    </h1>
+                    <p class="p1">
+                        <i class="i4">地址：</i>
+                        [
+                        <a target="_blank" href="javascript:void(0)">黄浦</a>
+                        ]&nbsp;-&nbsp;[
+                        <a target="_blank" href="javascript:void(0)">人民广场</a>
+                        ]
+                        <i class="i1">|</i>
+                        南京西路399号; 距离8号线人民广场约511米
+                    </p>
+
+                    <p class="p1">
+                        <i class="i4">人气：</i>
+                        39位用户正在关注,33次预约看房
+                    </p>
+
+                    <p class="p1">
+                        <i class="i4">面积：</i>
+                        85 - 1500m²
+                    </p>
+                    <span class="s1">
+                        <i class="i2">7.8</i>
+                        元/m²⋅天
+                    </span>
+                    <a title="收藏该楼盘到会员中心" href="javascript:void(0)" class="a-collect">
+                        <em class="icon">收藏</em>
+                    </a>
+                    <div class="list-more">
+                        <p class="p1">
+                            <a href="javascript:void(0)" target="_blank">满足条件44套</a>
+                        </p>
+                        <ul class="list-morebox clearfix">
+                            <li>
+                                <a class="a-tab" target="_blank" href="javascript:void(0)">728m²</a>
+                                <a target="_blank" href="javascript:void(0)">
+                                    <dl class="dl-img">
+                                        <dt>
+                                            <img src="images/nformation/ming_728.jpg">
+                                            <i class="i1">中等装修</i>
+                                        </dt>
+                                        <dd>728m²&nbsp;|&nbsp;9元/m²⋅天&nbsp;</dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="a-tab" target="_blank" href="javascript:void(0)">246m²</a>
+                                <a target="_blank" href="javascript:void(0)">
+                                    <dl class="dl-img">
+                                        <dt>
+                                            <img src="images/nformation/ming_246.jpg">
+                                            <i class="i1">中等装修</i>
+                                        </dt>
+                                        <dd>246m²&nbsp;|&nbsp;9元/m²⋅天&nbsp;</dd>
+                                    </dl>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a rel="nofollow" href="javascript:void(0)" target="_blank" class="a-tab">更多&gt;&gt;</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tagbox">
+                        <div class="tag">
+                            <span class="s1">地铁10分钟</span>
+                        </div>
+                        <div class="tag">
+                            <span class="s2">热门楼盘</span>
+                        </div>
+                        <div class="tag">
+                            <span class="s3">地铁10分钟</span>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+
+        <div class="pageBox mt-40">
+            <ul class="pagination">
+                <li>
+                    <a href="#">«</a>
+                </li>
+                <li>
+                    <a href="#">1</a>
+                </li>
+                <li>
+                    <a class="active" href="#">2</a>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                </li>
+                <li>
+                    <a href="#">4</a>
+                </li>
+                <li>
+                    <a href="#">5</a>
+                </li>
+                <li>
+                    <a href="#">6</a>
+                </li>
+                <li>
+                    <a href="#">7</a>
+                </li>
+                <li>
+                    <a href="#">»</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

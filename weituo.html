@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <title>通用头部底部</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" href="meat_logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/blank.css">
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/layer.js"></script>
+    <script src="js/home.js"></script>
+
+</head>
+    <style>
+     *{
+        font-family: "Microsoft YaHei";
+     }
+    .business-box {
+    width: 100%;
+    background-color: #fff;
+    margin: auto;
+    position: relative;
+    height: 700px
+   }
+   .business-bg-require {
+    background: url(images/dome1.jpg) center center no-repeat;
+    width: 100%;
+    border: 0;
+    height: 400px;
+   }
+   .business-box-zhaofang {
+    width: 460px;
+    border-radius: 10px;
+    background-color: #fff;
+    border: solid 1px #ececec;
+    position: absolute;
+    left: 0;
+    top: 70px;
+    right: 0;
+    margin: auto;
+    box-shadow: 3px 6px 8px 1px rgba(0, 0, 0, 0.38);
+   }
+    .business-box .business-box-zhaofang form .title {
+    text-align: center;
+    line-height: 32px;
+     }
+    .business-box .business-box-zhaofang form .title .tit {
+    height: 31px;
+    font-size: 24px;
+    text-align: center;
+    color: #000;
+    margin-top: 46px;
+    }
+     .business-box .business-box-zhaofang form .title .desc {
+    height: 19px;
+    text-align: center;
+    color: #666;
+    margin-top: 13px;
+    margin-bottom: 37px;
+    }
+    .business-process-require {
+    width: 400px;
+    height: 60px;
+    margin: 0 30px;
+    background: url(images/business-require-icon.jpg) center center no-repeat;
+    background-size: 400px 60px;
+    }
+    .business-box-form {
+    margin: 39px 30px 0 30px;
+    }
+    .business-box-form ul li.comment {
+    height: 96px;
+   }
+    .business-box-form ul li.comment {
+    border-radius: 4px;
+    background-color: #f5f5f5;
+   }
+    .business-box-form ul li {
+    width: 100%;
+    height: 48px;
+    margin-bottom: 10px;
+    line-height: 48px;
+    color: #666;
+    overflow: hidden;
+    border-radius: 5px;
+    }
+    .business-box-form ul li.item-button {
+    margin: 20px 0 40px 0;
+    }
+    .business-box-form ul li.comment textarea {
+    height: 96px;
+    width: 398px;
+    resize: none;
+    font: 14px/1.5em "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","微软雅黑","黑体",Arial,sans-serif;
+    line-height: 20px;
+    border: 1px solid #f5f5f5;
+    background: #f5f5f5;
+    border-radius: 5px;
+    padding: 15px 20px;
+    }
+    .font-grey {
+    color: #b2b2b2;
+     }
+
+    .business-box-form ul li input {
+    border: 1px solid #f5f5f5!important;
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    padding: 0 20px;
+    font-size: 14px;
+    outline:none;
+    }
+    .item-button .blue-theme-btn {
+    display: block;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    padding: 10px 166px;
+    border-radius: 4px;
+    background-color: #2eb363;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1px;
+    }
+    .business-box .business-box-zhaofang .box-bottom {
+    width: 458px;
+    height: 70px;
+    background-color: #f5f5f5;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    margin-top: 45px;
+    line-height: 75px;
+    font-size: 12px;
+    color: #777;
+     }
+    .business-box .business-box-zhaofang .box-bottom .phonecall {
+    font-size: 12px;
+    color: #2eb363;
+     }
+       .stats1 {
+         color:#aaa;
+         position: absolute;
+         bottom: 148px;
+         left: 40px;
+                  
+        }
+
+        .stats2 {
+          color:red;
+          position: absolute;
+          bottom: 148px;
+          left: 40px;
+        }
+
+        .stats3 {
+            color:red;
+            position: absolute;
+            bottom: 148px;
+            left: 40px;
+        }
+
+        .stats4 {
+            color:green;
+            position: absolute;
+            bottom: 148px;
+            left: 40px;
+        }
+        .clicktop {
+        position: fixed;
+        right: 50px;
+        bottom: 70px;
+        width: 40px;
+        height: 40px;
+        background-color: #2dc168;
+        text-align: center;
+        color: #fff;
+        }
+
+
+    </style>
+<body>
+
+    <!-- header -->
+    <div class="header_1">
+        <div class="warp">
+            <div class="site-city_t fl">
+                <span id="s11" class="s1">上海</span>
+                <span class="s2 s22">[切换城市]</span>
+                <ul id="click_qz" class="clearfix cla_zz" >
+                    <a id="a11" class="cut_tt" href="javascript:void(0)" class="a1 cur">上海</a>
+                    <a id="a11" href="javascript:void(0)" class="a1 ">北京</a>
+                </ul>
+            </div> <i class="i1 fl">|</i>
+            <div class="site-con fl">
+                <a target="_blank" href="home.html">首页</a>
+                <a target="_blank" href="javascript:void(0)">写字楼出租</a>
+                <a target="_blank" href="news.html">资讯中心</a>
+            </div>
+            <div class="site-ewm fr">
+                悦办越好公众号
+                <div class="site-img">
+                    <img src="images/gzh.jpg"  width="96" alt="公众号">
+                    <p class="p1">
+                        关注微信
+                        <br />
+                        <span>获取更多优惠资讯</span>
+                    </p>
+                </div>
+            </div> <i class="i1 fr">|</i>
+            <div class="site-tn_1 fr">
+                <i class="icon">电话：</i>
+                021-60520217
+            </div>
+            <i class="i1 fr">|</i>
+            <div class="user-box user_dl fr">
+                <a class="a1 a1_1 denglut" id="denglu2" href="javascript:void(0);">登录/注册</a>
+                <!-- 登录弹框用户没有登录显示 -->
+                <div style="display: none" class="xiala_1">
+                    <span class="s11">
+                        Hi,15938173877 <em class="icon"></em>
+                    </span>
+                    <ul class="xiala_11">
+                        <li>
+                            <a href="Personal1.html">我的收藏</a>
+                        </li>
+                        <li>
+                            <a href="Personal2.html">我的订阅</a>
+                        </li>
+                        <li>
+                            <a href="Personal3.html">我的看房清单</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">退出</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 用户登陆以后显示 --> </div>
+        </div>
+    </div>
+    <div class="top-nav top_navt">
+        <div class="warp">
+            <a href="home.html" class="logo fl"></a>
+            <div class="top-nav-box fl">
+                <a target="_blank" href="javascript:void(0)" class="a1 ">写字楼出租</a>
+                 <i class="i1">|</i>
+                <a target="_blank" href="javascript:void(0)" class="a1 ">地图找房</a>
+                 <i class="i1">|</i>
+                <a target="_blank" href="weituo.html" class="a1 cur_a1" >委托找房</a>
+                 <i class="i1">|</i>
+                <a target="_blank" href="toufang.html" class="a1 ">投放房源</a>
+            </div>
+            <div class="search-box fr">
+                <form style="display: inline;" class="inp-search" name="hzf">
+                    <div class="txt_search fl " >
+                        <input id="input_ss" name="keyword" checked="checked" class="" placeholder="输入您要查找的楼盘或者区域商圈名称" type="text">
+                        <!-- <ul class="select-opt select-option " onselectstart="return false"></ul> -->
+                    </div>
+                    <a href="javascript:;" class="btn-a fl">搜索</a>
+                </form>
+                <a  target="_blank" href="" class="map-btn"> <em class="fa fa-search"></em>
+                    地图找房
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- header结束    -->
+
+    <!-- 内容 -->
+    <div class="business-box require-height">
+        <div class="business-bg-require"></div>
+        <div class="business-box-zhaofang">
+            <form  class="business-form" onsubmit="return regs('click')">
+                <div class="title form-title">
+                    <p class="tit">免费委托找房</p>
+                    <p class="desc">一键提交需求，悦办越好帮您寻找最合适的办公室</p>
+                </div>
+                <div class="business-process-require"></div>
+                <div class="business-box-form">
+                    <ul>
+                        <li class="comment" style="border: 1px solid rgb(245, 245, 245);">
+                            <textarea name="comment" class="font-grey" placeholder="你的需求， 如：外滩SOHO，200平米写字楼，简装带家私，租金8元/㎡/天左右，附近有地铁"></textarea>
+                        </li>
+                        <div>
+                            <li class="mobile" style="border: 1px solid rgb(245, 245, 245);">
+                                <input id="phone" type="text" name="phone" class="font-grey" placeholder="手机号(如果是电话号码格式为  021-88888888 )">
+                                <span class="stats1"></span>
+                            </li>
+                        </div>
+                        <li class="item-button">
+                            <input class="blue-theme-btn" type="submit" name="sub" value="立即委托"></li>
+                    </ul>
+                </div>
+            </form>
+            <div class="box-bottom">
+                你也可以拨打
+                <span class="phonecall">021-60520217</span>
+                直接委托需求
+            </div>
+        </div>
+    </div>
+    <!-- 内容结束 -->
+
+    <div class="bg_h">
+        <div class="warp">
+            <div class="icon_tb">
+                <ul class="text-center">
+                    <li>
+                        <img src="images/advan-zfy.png">
+                        <h3>100%真房源</h3>
+                        <p>实勘团队人工实地拍摄，每一间办公室都由悦办越好精心挑选</p>
+                    </li>
+                    <li>
+                        <img src="images/advan-xhsx.png">
+                        <h3>细化筛选</h3>
+                        <p>提供交通、周边、商业、价格、特色等更多的专业筛选，快速精准找到办公场所</p>
+                    </li>
+                    <li>
+                        <img src="images/advan-gbfw.png">
+                        <h3>贵宾服务</h3>
+                        <p>专业顾问带看，详细讲解楼盘信息，享受VIP服务，助您找到心仪的办公场所</p>
+                    </li>
+                    <li class="mr0">
+                        <img src="images/advan-zzfw.png">
+                        <h3>增值服务</h3>
+                        <p>悦办越好携手众多知名企业服务公司，让您公司享受全方位的企业服务</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="foot">
+        <div class="footbox">
+            <h1>办公选址选悦办越好，1小时轻松搞定 !</h1>
+            <p class="p1">
+                <a href="About.html" target="_blank">关于悦办越好</a>
+                <i class="i1">-</i>
+                <a href="About2.html" target="_blank">联系我们</a>
+                <i class="i1">-</i>
+                <a href="About3.html" target="_blank">商办精英</a>
+                <i class="i1">-</i>
+                <a href="About4.html" target="_blank">常见问题</a>
+            </p>
+            <p class="p1">
+                &copy;2015-2017&nbsp;德御商业地产&nbsp;
+                <a href="javascript:void(0)" target="_blank">沪ICP备xxxxxxx号-1</a>
+                &nbsp;浦东地址：上海市崂山路526号江苏大厦14层A1 &nbsp;浦西地址：上海市南京东路800号新一百大厦14C室
+            </p>
+            <i class="foot-line">-</i>
+            <p class="p2">
+                友情链接：
+                <a target="_blank" href="http://www.ganji.com/xiezilouchuzu/">赶集网写字楼</a>
+                <a target="_blank" href="http://www.58.com/zhaozu/">58同城写字楼</a>
+                <a target="_blank" href="http://sh.sp.anjuke.com/">上海商铺</a>
+                <a target="_blank" href="http://www.add-space.com/">办公室装修</a>
+                <a target="_blank" href="http://xf.pinganfang.com/sh/">上海新房</a>
+                <div class="foot-tele">
+                    <p class="p1">
+                        客服服务：
+                        <i class="i1">（早9:00-晚20:00）</i>
+                    </p>
+                    <p class="p2">021-60520217</p>
+                </div>
+                <div class="foot-ewm">
+                    <img src="images/gzh.jpg" width="96" />
+                    <p class="p1">扫描关注公众号</p>
+                </div>
+            </div>
+        </div>
+        <!-- 底部结束 -->
+        
+        <script>
+       //获取下一个span,可以通过这个对象给状态
+function gspan(cobj){
+    while(true){
+        if(cobj.nextSibling.nodeName!="SPAN")
+            cobj=cobj.nextSibling;
+        else
+            return cobj.nextSibling;    
+    }
+}
+
+/*
+  通用检查方法
+  第一个参数：obj, 是用来检查的对象
+  第二个参数：info, 是用来检查的提示信息
+  第三个参数: fun, 是一个回调函数，用来检查值是否按条件输入
+  第四个参数： click只是一个状态， 分清楚是单击提交按，还是失去焦点
+*/
+function check(obj, info, fun, click){
+    var sp=gspan(obj);
+    obj.onfocus=function(){ 
+        sp.innerHTML=info;
+        sp.className="stats2";
+        
+    }
+
+    obj.onblur=function(){
+        if(fun(this.value)){
+            sp.innerHTML="输入正确";
+            sp.className="stats4";
+            
+        }else{
+            sp.innerHTML=info;
+            sp.className="stats3";
+        }
+    }
+
+    if(click=="click")
+        obj.onblur();
+}
+
+//页面加载完自动调用
+onload=regs
+
+//一个函数，可以使用onsubmit调用， 也可以使用onload调用
+function regs(click){
+
+var stat=true;
+  
+    var phone=document.getElementsByName("phone")[0];
+   
+
+    
+
+    
+    check(phone, "号码错误", function(val){
+        if(val.match(/^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/)){
+            return true;
+        }else{
+            stat=false;
+            return false;
+        }
+    }, click)       
+
+    return stat;
+}
+  </script>
+        <script>
+
+    /*
+ * jQuery placeholder, fix for IE6,7,8,9
+ * @author JENA
+ * @since 20131115.1504
+ * @website ishere.cn
+ */
+var JPlaceHolder = {
+    //检测
+    _check : function(){
+        return 'placeholder' in document.createElement('input');
+    },
+    //初始化
+    init : function(){
+        if(!this._check()){
+            this.fix();
+        }
+    },
+    //修复
+    fix : function(){
+        jQuery(':input[placeholder]').each(function(index, element) {
+            var self = $(this), txt = self.attr('placeholder');
+            self.wrap($('<div></div>').css({position:'relative', zoom:'1', border:'none', background:'none', padding:'none', margin:'none'}));
+            var pos = self.position(), h = self.outerHeight(true), paddingleft = self.css('padding-left');
+            var holder = $('<span></span>').text(txt).css({position:'absolute', left:pos.left, top:pos.top, height:h, lienHeight:h, paddingLeft:paddingleft, color:'#aaa'}).appendTo(self.parent());
+            self.focusin(function(e) {
+                holder.hide();
+            }).focusout(function(e) {
+                if(!self.val()){
+                    holder.show();
+                }
+            });
+            holder.click(function(e) {
+                holder.hide();
+                self.focus();
+            });
+        });
+    }
+};
+//执行
+jQuery(function(){
+    JPlaceHolder.init();    
+});
+  </script>
+</body>
+    </html>

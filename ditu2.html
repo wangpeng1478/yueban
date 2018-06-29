@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>默认样式信息窗体</title>
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <script type="text/javascript"
+            src="http://webapi.amap.com/maps?v=1.4.0&key=447187193b2331435db7da59843c94f3"></script>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/javascript">
+    var infoWindow;
+    var map = new AMap.Map("container", {
+        resizeEnable: true,
+		center: [121.475213,31.235871],
+        zoom: 17
+    });
+    //在指定位置打开信息窗体
+    function openInfo() {
+        //构建信息窗体中显示的内容
+        var info = [];
+        info.push("<div style=\"padding:5px 10px;line-height:1.5\"><b>德御商业地产·悦办越好</b>");
+        info.push("电话 : 021-60520217");
+        info.push("地址(浦西) :南京东路800号新一百大厦15C室</div></div>");
+        infoWindow = new AMap.InfoWindow({
+            content: info.join("<br/>")  //使用默认信息窗体框样式，显示信息内容
+        });
+        infoWindow.open(map, map.getCenter());
+    }
+    openInfo();
+</script>
+<script type="text/javascript" src="http://webapi.amap.com/demos/js/liteToolbar.js"></script>
+</body>
+</html>

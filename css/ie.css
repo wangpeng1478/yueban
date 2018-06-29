@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2017-09-11 09:45:09
+ * @version $Id$
+ */
+#search{
+    width: 879px !important;
+}
+.h-left .change-city{
+    display: none;
+}
+.our-nice .yongjin i,.our-nice .kanfang i,.our-nice .fangyuan i,.our-nice .fuwu i{
+   margin-top: -20px;
+}
+.our-nice{border-bottom: 1px solid #c5c5c5;}
+.ProductList li{
+    height: 390px;
+}
+.view{
+   bottom: -20px; 
+}
+.ProductList li{
+   border: 1px solid #f1f1f1; 
+}
+.bg_war{z-index: 10;}
+/*#ie_none{display: none;}*/
+.zixun-pic-t{
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);    /*IE8支持*/
+}
+.searchm{
+   width: 830px; 
+}
+.inp_1{
+    width: 580px;
+}

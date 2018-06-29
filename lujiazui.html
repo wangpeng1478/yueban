@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <title>热门楼盘</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" href="meat_logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/nav1.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- 图标 -->
+    <link rel="stylesheet" href="css/blank.css">
+    <link rel="stylesheet" href="css/tong.css">
+
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/layer.js"></script>
+    <script src="js/home.js"></script>
+
+</head>
+    <style>
+  ._butl{
+    margin: 20px auto;
+    font-size: 18px;
+    padding: 10px 20px;
+    text-align: center;
+    background: #2dc168;
+    color: #fff !important;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    transition: .5s;
+    display: block;
+  }
+  ._butl:hover{
+    opacity: 0.8;
+  }
+    </style>
+<body>
+
+    <!-- header -->
+    <div class="header_1">
+        <div class="warp">
+            <div class="site-city_t fl">
+                <span id="s11" class="s1">上海</span>
+                <span class="s2 s22">[切换城市]</span>
+                <ul id="click_qz" class="clearfix cla_zz" >
+                    <a id="a11" class="cut_tt" href="javascript:void(0)" class="a1 cur">上海</a>
+                    <a id="a11" href="javascript:void(0)" class="a1 ">北京</a>
+                </ul>
+            </div> <i class="i1 fl">|</i>
+            <div class="site-con fl">
+                <a target="_blank" href="home.html">首页</a>
+                <a target="_blank" href="javascript:void(0)">写字楼出租</a>
+                <a target="_blank" href="news.html">资讯中心</a>
+            </div>
+            <div class="site-ewm fr">
+                悦办越好公众号
+                <div class="site-img">
+                    <img src="images/gzh.jpg"  width="96" alt="公众号">
+                    <p class="p1">
+                        关注微信
+                        <br />
+                        <span>获取更多优惠资讯</span>
+                    </p>
+                </div>
+            </div> <i class="i1 fr">|</i>
+            <div class="site-tn_1 fr">
+                <i class="icon">电话：</i>
+                021-60520217
+            </div>
+            <i class="i1 fr">|</i>
+            <div class="user-box user_dl fr">
+                <a class="a1 a1_1 denglut" id="denglu2" href="javascript:void(0);">登录/注册</a>
+                <!-- 登录弹框用户没有登录显示 -->
+                <div style="display: none" class="xiala_1">
+                    <span class="s11">
+                        Hi,15938173877 <em class="icon"></em>
+                    </span>
+                    <ul class="xiala_11">
+                        <li>
+                            <a href="javascript:void(0)">个人中心</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">我的收藏</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">我的订阅</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">我的看房清单</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">我的房源投放</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">退出</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 用户登陆以后显示 --> </div>
+        </div>
+    </div>
+    <div class="top-nav top_navt">
+        <div class="warp">
+            <a href="home.html" class="logo fl"></a>
+            <div class="top-nav-box fl">
+                <a target="_blank" href="javascript:void(0)" class="a1 cur_a1">写字楼出租</a>
+
+                <i class="i1">|</i>
+                <a target="_blank" href="javascript:void(0)" class="a1 ">地图找房</a>
+                <i class="i1">|</i>
+                <a target="_blank" href="javascript:void(0)" class="a1 " >委托找房</a>
+                <i class="i1">|</i>
+                <a target="_blank" href="javascript:void(0)" class="a1 ">投放房源</a>
+            </div>
+            <div class="search-box fr">
+                <form style="display: inline;" class="inp-search" name="hzf">
+                    <div class="txt_search fl " >
+                        <input id="input_ss" name="keyword" checked="checked" class="" placeholder="输入您要查找的楼盘或者区域商圈名称" type="text">
+
+                        <ul class="select-opt select-option " onselectstart="return false"></ul>
+                    </div>
+                    <a href="javascript:;" class="btn-a fl">搜索</a>
+                </form>
+                <a  target="_blank" href="" class="map-btn"> <em class="fa fa-search"></em>
+                    地图找房
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- header结束    -->
+
+    <!-- 内容 -->
+    <div class="banner-box v4-banner">
+        <div class="fixedBg"></div>
+        <div class="text_h1"> 
+            <div class="v4-about">
+                <i class="i1">“</i>
+                <p class="v4-h2">上海顶级写字楼 · 城市商圈新坐标</p>
+                <p>城市的综合体经过几年发展，已经不仅仅承载了购物、娱乐的日常需求，富有创意的人们将更多的元素与城市坐标建筑相结合，使其有更多生命与色彩。由创意+文化+城市综合体构成的城市创意文化综合体，近些年在国内核心城市兴起，其是以文化消费为核心衍生出来的文化建筑群体，核心内容是文化消费。
+                </p>
+                <i class="i2">”</i>
+            </div>
+        </div>
+    </div>
+    <div class="warp">
+       <!--  <div class="v4-about">
+            <i class="i1">“</i>
+            <p></p>
+            <p>
+                城市的综合体经过几年发展，已经不仅仅承载了购物、娱乐的日常需求，富有创意的人们将更多的元素与城市坐标建筑相结合，使其有更多生命与色彩。由创意+文化+城市综合体构成的城市创意文化综合体，近些年在国内核心城市兴起，其是以文化消费为核心衍生出来的文化建筑群体，核心内容是文化消费。
+            </p>
+            <i class="i2">”</i>
+        </div> -->
+        <h1 class="detail-h1 clearfix">外滩金融中心</h1>
+        <div class="clearfix v4-box">
+            <div class="v4-leftbox">
+                <div class="v4-imgbox clearfix">
+                    <div class="v4-img-left">
+                        <img src="images/banner1.jpg" ></div>
+                    <div class="v4-img-right">
+                        <span class="s1">
+
+                            <img src="images/banner2.jpg" ></span>
+                        <span class="s1">
+
+                            <img src="images/banner3.jpg" ></span>
+                    </div>
+                </div>
+
+                <h2 class="v4-h4-title"></h2>
+                <div class="v4-text">
+                    <p>
+                        地处外滩金融聚集带核心位置，有着上海最好的资源，大约有42万平方米，涵盖企业会馆、企业总部、购物中心、艺术中心及精品酒店五大业态，汇聚金融、商业、旅游、文化、艺术等多种功能，打造一站式体验购物环境，同时具有艺术中心、露天舞台等文化功能配套。
+                    </p>
+                </div>
+            </div>
+            <div class="v4-rightbox">
+                <div class="v4-right-imgbox">
+                    <a target="_blank" href="javascript:void(0)">
+                        <div class="v4-right-img">
+                            <img src="images/huodong3.jpg">
+                            <span class="s1">10-16 元/m²⋅天</span>
+                        </div>
+                        <div class="v4-right-text">
+                            <h1 class="h1-title">外滩金融中心</h1>
+                            <div class="d1 clearfix">
+                                <span class="fa fa-map-marker">
+                                    <em class="em1 icon"></em>距离10号线支线豫园约1006米
+                                </span><br />
+                                <span class="fa fa-home ">
+                                    <em class="em2 icon"></em>345个在租房源
+                                </span>
+                            </div>
+                            <p class="p1">
+                                <em class="em3 icon"></em>
+                                黄浦 - 外滩
+                            </p>
+                            <div class="d2"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+         <h1 class="detail-h1 clearfix">外滩金融中心</h1>
+        <div class="clearfix v4-box">
+            <div class="v4-leftbox">
+                <div class="v4-imgbox clearfix">
+                    <div class="v4-img-left">
+                        <img src="images/banner1.jpg" ></div>
+                    <div class="v4-img-right">
+                        <span class="s1">
+
+                            <img src="images/banner2.jpg" ></span>
+                        <span class="s1">
+
+                            <img src="images/banner3.jpg" ></span>
+                    </div>
+                </div>
+
+                <h2 class="v4-h4-title"></h2>
+                <div class="v4-text">
+                    <p>
+                        地处外滩金融聚集带核心位置，有着上海最好的资源，大约有42万平方米，涵盖企业会馆、企业总部、购物中心、艺术中心及精品酒店五大业态，汇聚金融、商业、旅游、文化、艺术等多种功能，打造一站式体验购物环境，同时具有艺术中心、露天舞台等文化功能配套。
+                    </p>
+                </div>
+            </div>
+            <div class="v4-rightbox">
+                <div class="v4-right-imgbox">
+                    <a target="_blank" href="javascript:void(0)">
+                        <div class="v4-right-img">
+                            <img src="images/huodong3.jpg">
+                            <span class="s1">10-16 元/m²⋅天</span>
+                        </div>
+                        <div class="v4-right-text">
+                            <h1 class="h1-title">外滩金融中心</h1>
+                            <div class="d1 clearfix">
+                                <span class="fa fa-map-marker">
+                                    <em class="em1 icon"></em>距离10号线支线豫园约1006米
+                                </span><br />
+                                <span class="fa fa-home ">
+                                    <em class="em2 icon"></em>345个在租房源
+                                </span>
+                            </div>
+                            <p class="p1">
+                                <em class="em3 icon"></em>
+                                黄浦 - 外滩
+                            </p>
+                            <div class="d2"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+         <h1 class="detail-h1 clearfix">外滩金融中心</h1>
+        <div class="clearfix v4-box">
+            <div class="v4-leftbox">
+                <div class="v4-imgbox clearfix">
+                    <div class="v4-img-left">
+                        <img src="images/banner1.jpg" ></div>
+                    <div class="v4-img-right">
+                        <span class="s1">
+
+                            <img src="images/banner2.jpg" ></span>
+                        <span class="s1">
+
+                            <img src="images/banner3.jpg" ></span>
+                    </div>
+                </div>
+
+                <h2 class="v4-h4-title"></h2>
+                <div class="v4-text">
+                    <p>
+                        地处外滩金融聚集带核心位置，有着上海最好的资源，大约有42万平方米，涵盖企业会馆、企业总部、购物中心、艺术中心及精品酒店五大业态，汇聚金融、商业、旅游、文化、艺术等多种功能，打造一站式体验购物环境，同时具有艺术中心、露天舞台等文化功能配套。
+                    </p>
+                </div>
+            </div>
+            <div class="v4-rightbox">
+                <div class="v4-right-imgbox">
+                    <a target="_blank" href="javascript:void(0)">
+                        <div class="v4-right-img">
+                            <img src="images/huodong3.jpg">
+                            <span class="s1">10-16 元/m²⋅天</span>
+                        </div>
+                        <div class="v4-right-text">
+                            <h1 class="h1-title">外滩金融中心</h1>
+                            <div class="d1 clearfix">
+                                <span class="fa fa-map-marker">
+                                    <em class="em1 icon"></em>距离10号线支线豫园约1006米
+                                </span><br />
+                                <span class="fa fa-home ">
+                                    <em class="em2 icon"></em>345个在租房源
+                                </span>
+                            </div>
+                            <p class="p1">
+                                <em class="em3 icon"></em>
+                                黄浦 - 外滩
+                            </p>
+                            <div class="d2"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <a target="_blank" href="javascript:void(0)" class="_butl">查看更多陆家嘴房源>></a>
+    </div>
+    <!-- 内容结束 -->
+
+    <div class="bg_h">
+        <div class="warp">
+            <div class="icon_tb">
+                <ul class="text-center">
+                    <li>
+                        <img src="images/advan-zfy.png">
+                        <h3>100%真房源</h3>
+                        <p>实勘团队人工实地拍摄，每一间办公室都由悦办越好精心挑选</p>
+                    </li>
+                    <li>
+                        <img src="images/advan-xhsx.png">
+                        <h3>细化筛选</h3>
+                        <p>提供交通、周边、商业、价格、特色等更多的专业筛选，快速精准找到办公场所</p>
+                    </li>
+                    <li>
+                        <img src="images/advan-gbfw.png">
+                        <h3>贵宾服务</h3>
+                        <p>专业顾问带看，详细讲解楼盘信息，享受VIP服务，助您找到心仪的办公场所</p>
+                    </li>
+                    <li class="mr0">
+                        <img src="images/advan-zzfw.png">
+                        <h3>增值服务</h3>
+                        <p>悦办越好携手众多知名企业服务公司，让您公司享受全方位的企业服务</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+      <!-- 底部 --> 
+  <div class="foot"> 
+   <div class="footbox"> 
+    <h1>办公选址选悦办越好，1小时轻松搞定 !</h1> 
+    <p class="p1"> 
+    <a href="About.html" target="_blank">关于悦办越好</a> <i class="i1">-</i> 
+    <a href="About2.html" target="_blank">联系我们</a> <i class="i1">-</i> 
+    <a href="About3.html" target="_blank">商办精英</a> <i class="i1">-</i> 
+    <a href="About4.html" target="_blank">常见问题</a> </p> 
+    <p class="p1"> &copy;2015-2017&nbsp;德御商业地产&nbsp; <a href="javascript:void(0)" target="_blank">沪ICP备xxxxxxx号-1</a> &nbsp;浦东地址：上海市崂山路526号江苏大厦14层A1 &nbsp;浦西地址：上海市南京东路800号新一百大厦14C室</p> 
+    <i class="foot-line">-</i> 
+    <p class="p2"> 友情链接： 
+    <a target="_blank" href="http://www.ganji.com/xiezilouchuzu/">赶集网写字楼</a> 
+    <a target="_blank" href="http://www.58.com/zhaozu/">58同城写字楼</a> 
+    <a target="_blank" href="http://sh.sp.anjuke.com/">上海商铺</a> 
+    <a target="_blank" href="http://www.add-space.com/">办公室装修</a> 
+    <a target="_blank" href="http://xf.pinganfang.com/sh/">上海新房</a> 
+    <div class="foot-tele"> 
+     <p class="p1"> 客服服务： <i class="i1">（早9:00-晚20:00）</i> </p> 
+     <p class="p2">021-60520217</p> 
+    </div> 
+    <div class="foot-ewm"> 
+     <img src="images/gzh.jpg" width="96" /> 
+     <p class="p1">扫描关注公众号</p> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- 底部结束 --> 
+    <!-- top -->
+    <div class="clicktop" style="display:none;">
+        <i class="fa fa-angle-up fatop fa-4x"></i>
+    </div>
+    <!-- top结束 -->
+    <script>
+    // -------------------------top
+         $(window).scroll(function() {      
+           if($(window).scrollTop() >= 200){
+            $(".clicktop").show();
+            $(".nav").addClass('nav1');
+            $(".b").addClass('gu')
+        }else{    
+            $(".clicktop").hide(); 
+            $(".nav").removeClass('nav1');
+            $(".b").removeClass('gu');
+            
+        }
+      
+       })
+        $(".clicktop").click(function() {
+          $('html,body').animate({scrollTop:0}, 500);//top
+
+       })
+    </script>
+
+</body>
+</html>

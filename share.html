@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <title>共享办公</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" href="meat_logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/nav1.css">
+    <link rel="stylesheet" href="css/blank.css">
+    <link rel="stylesheet" href="css/tongg.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/layer.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/share.js"></script>
+    <script src="js/swiper.jquery.min.js"></script>
+    <script src="js/biaoge.js"></script>
+    <style>
+    .fixedBg {
+        background-image: url(images/ban.jpg);
+    }
+
+    #rongqi {
+        position: relative;
+    }
+
+    .detail-right_rrr {
+        position: absolute;
+        top: -80px;
+        right: 35px;
+        z-index: 10;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="header_1">
+        <div class="warp">
+            <div class="site-city_t fl">
+                <span id="s11" class="s1">上海</span>
+                <span class="s2 s22">[切换城市]</span>
+                <ul id="click_qz" class="clearfix cla_zz">
+                    <a id="a11" class="cut_tt" href="javascript:void(0)" class="a1 cur">上海</a>
+                    <a id="a11" href="javascript:void(0)" class="a1 ">北京</a>
+                </ul>
+            </div> <i class="i1 fl">|</i>
+            <div class="site-con fl">
+                <a target="_blank" href="home.html">首页</a>
+                <a target="_blank" href="javascript:void(0)">写字楼出租</a>
+                <a target="_blank" href="news.html">资讯中心</a>
+            </div>
+            <div class="site-ewm fr">
+                悦办越好公众号
+                <div class="site-img">
+                    <img src="images/gzh.jpg" width="96" alt="公众号">
+                    <p class="p1">
+                        关注微信
+                        <br />
+                        <span>获取更多优惠资讯</span>
+                    </p>
+                </div>
+            </div> <i class="i1 fr">|</i>
+            <div class="site-tn_1 fr">
+                <i class="icon">电话：</i> 021-60520217
+            </div>
+            <i class="i1 fr">|</i>
+            <div class="user-box user_dl fr">
+                <a class="a1 a1_1 denglut" id="denglu2" href="javascript:void(0);">登录/注册</a>
+                <!-- 登录弹框用户没有登录显示 -->
+                <div style="display: none" class="xiala_1">
+                    <span class="s11">
+                        Hi,15938173877 <em class="icon"></em>
+                    </span>
+                    <ul class="xiala_11">
+                        <li>
+                            <a href="javascript:void(0)">个人中心</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">我的收藏</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">我的订阅</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">我的看房清单</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">我的房源投放</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">退出</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 用户登陆以后显示 -->
+            </div>
+        </div>
+    </div>
+    <div class="top-nav top_navt">
+        <div class="warp">
+            <a href="home.html" class="logo fl"></a>
+            <div class="top-nav-box fl">
+                <a target="_blank" href="javascript:void(0)" class="a1 cur_a1">写字楼出租</a>
+                <i class="i1">|</i>
+                <a target="_blank" href="javascript:void(0)" class="a1 ">地图找房</a>
+                <i class="i1">|</i>
+                <a target="_blank" href="javascript:void(0)" class="a1 ">委托找房</a>
+                <i class="i1">|</i>
+                <a target="_blank" href="javascript:void(0)" class="a1 ">投放房源</a>
+            </div>
+            <div class="search-box fr">
+                <form style="display: inline;" class="inp-search" name="hzf">
+                    <div class="txt_search fl ">
+                        <input id="input_ss" name="keyword" checked="checked" class="" placeholder="输入您要查找的楼盘或者区域商圈名称" type="text">
+                        <ul class="select-opt select-option " onselectstart="return false"></ul>
+                    </div>
+                    <a href="javascript:;" class="btn-a fl">搜索</a>
+                </form>
+                <a target="_blank" href="" class="map-btn"> <em class="fa fa-search"></em>
+                    地图找房
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- header结束    -->
+    <!-- 内容 -->
+    <div class="banner-box v4-banner ban_sh">
+        <div class="fixedBg"></div>
+        <div class="fl detail-office-info detail_txt">
+            <h1 class="detail-office-name fn clearfix">
+                <span class="fl">方糖小镇（上海时装商厦）</span>
+            </h1>
+            <h4>创业是杯苦咖啡，我们为你加点糖。</h4>
+            <p>
+                <span>
+                    <em class="em1 fa fa-map-marker" ></em>
+                    [
+                    <a target="_blank"  href="javascript:void(0)">虹口</a>
+                    -
+                    <a href="javascript:void(0)" target="_blank">四川北路</a>
+                    ]四川北路1915号
+                </span>
+                <span>
+                    <em class="em2 fa fa-subway" ></em>
+                    距离3号线东宝兴路约423米
+                </span>
+                <span>
+                    <em class="em3 fa fa-home"></em>
+                    5种房源类型在租
+                </span>
+            </p>
+        </div>
+    </div>
+    <div class="crumbs con-crumbs">
+        <div class="warp">
+            当前位置：&nbsp;&nbsp;
+            <a target="_blank" href="javascript:void(0)">上海共享办公</a> &gt; xxxx（xxxxxxx）
+        </div>
+    </div>
+    <!-- ========== -->
+    <div class="warp clearfix pos-r" id="rongqi">
+        <a name="houseinfo" href="javascript:void(0)"></a>
+        <div class="w860 fl">
+            <!-- =============== -->
+            <div class="house-bar swiper-container swiper-container1">
+                <ul class="feature clearfix swiper-wrapper">
+                    <li class="swiper-slide swiper-slide1 current" data-index="0">
+                        <span class="f-title">全部户型</span>
+                        <span class="f-con">17套</span>
+                    </li>
+                    <li class="swiper-slide swiper-slide1" data-index="1">
+                        <span class="f-title">单人卡位</span>
+                        <span class="f-con">1套</span>
+                    </li>
+                    <li class="swiper-slide swiper-slide1" data-index="2">
+                        <span class="f-title">2-3人</span>
+                        <span class="f-con">2套</span>
+                    </li>
+                    <li class="swiper-slide swiper-slide1" data-index="3">
+                        <span class="f-title">4-6人</span>
+                        <span class="f-con">5套</span>
+                    </li>
+                    <li class="swiper-slide swiper-slide1" data-index="4">
+                        <span class="f-title">7-10人</span>
+                        <span class="f-con">4套</span>
+                    </li>
+                    <li class="swiper-slide swiper-slide1" data-index="3">
+                        <span class="f-title">4-6人</span>
+                        <span class="f-con">5套</span>
+                    </li>
+                    <li class="swiper-slide swiper-slide1" data-index="4">
+                        <span class="f-title">7-10人</span>
+                        <span class="f-con">4套</span>
+                    </li>
+                </ul>
+                <!-- 如果需要滚动条 -->
+                <div class="swiper-scrollbar swiper-scrollbar1"></div>
+            </div>
+            <div class="photo-box">
+                <span class="title-tip">
+                    照片总览
+                    <span >户型照片集合</span>
+                </span>
+                <div class="swiper-container swiper-container2 gallery">
+                    <a id="show_sss" style="width: 0;height:0" title="1" href="images/ban.jpg" class="fixedBg_a"></a>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide swiper-slide2">
+                            <a title="户型图" href="images/xinwen_1.jpg">
+                                <img src="images/xinwen_1.jpg"></a>
+                        </div>
+                        <div class="swiper-slide swiper-slide2">
+                            <a title="户型图" href="images/xinwen_1.jpg">
+                                <img src="images/xinwen_1.jpg"></a>
+                        </div>
+                        <div class="swiper-slide swiper-slide2">
+                            <a title="户型图" href="images/xinwen_1.jpg">
+                                <img src="images/xinwen_1.jpg"></a>
+                        </div>
+                        <div class="swiper-slide swiper-slide2">
+                            <a title="户型图" href="images/xinwen_1.jpg">
+                                <img src="images/xinwen_1.jpg"></a>
+                        </div>
+                        <div class="swiper-slide swiper-slide2">
+                            <a title="户型图" href="images/xinwen_1.jpg">
+                                <img src="images/xinwen_1.jpg"></a>
+                        </div>
+                    </div>
+                    <!-- 如果需要导航按钮 -->
+                    <div class="swiper-button-prev1 icocss"> <i class="iconoo-caretleft"></i></div>
+                    <div class="swiper-button-next1 icocss"> <i class="iconoo-caretRight"></i></div>
+                </div>
+            </div>
+            <!-- ================== -->
+            <div class="photo-box">
+                <span class="title-tip">户型列表</span>
+                <table class="fwcz" id="myTable">
+                    <thead>
+                        <tr>
+                            <th width="20%">照片</th>
+                            <th width="26.66%">
+                                面积
+                                <em>↓↑</em>
+                            </th>
+                            <th width="26.66%">
+                                人数
+                                <em>↓↑</em>
+                            </th>
+                            <th width="26.66%">
+                                单价
+                                <em>↓↑</em>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="box-lis2">
+                        <tr onclick='window.open("page_x.html"); ' data-index="1">
+                            <td>
+                                <img src="images/xinwen_1.jpg" class="tbody_img" />
+                            </td>
+                            <td>40人</td>
+                            <td>15元/m²⋅天</td>
+                            <td>3000 元/月</td>
+                        </tr>
+                        <tr onclick='window.open("page_x.html"); ' data-index="2">
+                            <td>
+                                <img src="images/xinwen_1.jpg" class="tbody_img" />
+                            </td>
+                            <td>30人</td>
+                            <td>12元/m²⋅天</td>
+                            <td>18000 元/月</td>
+                        </tr>
+                        <tr onclick='window.open("page_x.html"); ' data-index="1">
+                            <td>
+                                <img src="images/xinwen_1.jpg" class="tbody_img" />
+                            </td>
+                            <td>25人</td>
+                            <td>14元/m²⋅天</td>
+                            <td>1600 元/月</td>
+                        </tr>
+                        <tr onclick='window.open("page_x.html"); ' data-index="2">
+                            <td>
+                                <img src="images/xinwen_1.jpg" class="tbody_img" />
+                            </td>
+                            <td>16人</td>
+                            <td>15元/m²⋅天</td>
+                            <td>11000 元/月</td>
+                        </tr>
+                        <tr onclick='window.open("page_x.html"); ' data-index="2">
+                            <td>
+                                <img src="images/xinwen_1.jpg" class="tbody_img" />
+                            </td>
+                            <td>30人</td>
+                            <td>12元/m²⋅天</td>
+                            <td>18000 元/月</td>
+                        </tr>
+                        <tr onclick='window.open("page_x.html"); ' data-index="1">
+                            <td>
+                                <img src="images/xinwen_1.jpg" class="tbody_img" />
+                            </td>
+                            <td>25人</td>
+                            <td>14元/m²⋅天</td>
+                            <td>1600 元/月</td>
+                        </tr>
+                        <tr onclick='window.open("page_x.html"); ' data-index="2">
+                            <td>
+                                <img src="images/xinwen_1.jpg" class="tbody_img" />
+                            </td>
+                            <td>16人</td>
+                            <td>15元/m²⋅天</td>
+                            <td>11000 元/月</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="javascript:void(0)" class="house-more">查看更多</a>
+            </div>
+            <!--soho e-->
+            <h1 class="detail-h1 pt-20 pb-10">空间简介</h1>
+            <div class="gx-about">
+                <dl class="clearfix basic">
+                    <dt>基础服务</dt>
+                    <dd class="clearfix">
+                        <span>
+                            <em class="share-icon em1"></em>
+                            前台接见
+                        </span>
+                        <span>
+                            <em class="share-icon em2"></em>
+                            书吧
+                        </span>
+                        <span>
+                            <em class="share-icon em3"></em>
+                            洽谈室
+                        </span>
+                        <span>
+                            <em class="share-icon em4"></em>
+                            办公清洁
+                        </span>
+                        <span>
+                            <em class="share-icon em5"></em>
+                            办公家具
+                        </span>
+                        <span>
+                            <em class="share-icon em6"></em>
+                            休闲区
+                        </span>
+                        <span>
+                            <em class="share-icon em7"></em>
+                            视频远程会议
+                        </span>
+                        <span>
+                            <em class="share-icon em8"></em>
+                            茶点
+                        </span>
+                        <span>
+                            <em class="share-icon em9"></em>
+                            复印打印
+                        </span>
+                        <span>
+                            <em class="share-icon em10"></em>
+                            健身设施
+                        </span>
+                        <span>
+                            <em class="share-icon em11"></em>
+                            多功能厅
+                        </span>
+                        <span>
+                            <em class="share-icon em12"></em>
+                            免费咖啡
+                        </span>
+                        <span>
+                            <em class="share-icon em13"></em>
+                            传真
+                        </span>
+                        <span>
+                            <em class="share-icon em14"></em>
+                            中央空调
+                        </span>
+                        <span>
+                            <em class="share-icon em15"></em>
+                            咖啡厅
+                        </span>
+                        <span>
+                            <em class="share-icon em16"></em>
+                            饮用水
+                        </span>
+                        <span>
+                            <em class="share-icon em17"></em>
+                            办公宽带
+                        </span>
+                        <span>
+                            <em class="share-icon em18"></em>
+                            空气净化器
+                        </span>
+                        <span>
+                            <em class="share-icon em19"></em>
+                            茶水间
+                        </span>
+                        <span>
+                            <em class="share-icon em20"></em>
+                            WIFI
+                        </span>
+                        <span>
+                            <em class="share-icon em21"></em>
+                            自动售卖机
+                        </span>
+                        <span>
+                            <em class="share-icon em22"></em>
+                            冰箱
+                        </span>
+                    </dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>企业服务</dt>
+                    <dd class="clearfix">
+                        <span>
+                            <em class="share-icon em23"></em>
+                            会议室
+                        </span>
+                        <span>
+                            <em class="share-icon em24"></em>
+                            微波炉
+                        </span>
+                        <span>
+                            <em class="share-icon em25"></em>
+                            卫生间配套
+                        </span>
+                        <span>
+                            <em class="share-icon em26"></em>
+                            办理证件
+                        </span>
+                        <span>
+                            <em class="share-icon em27"></em>
+                            投融资服务
+                        </span>
+                        <span>
+                            <em class="share-icon em28"></em>
+                            人力招聘
+                        </span>
+                        <span>
+                            <em class="share-icon em29"></em>
+                            运营服务
+                        </span>
+                        <span>
+                            <em class="share-icon em30"></em>
+                            公司年检
+                        </span>
+                        <span>
+                            <em class="share-icon em31"></em>
+                            营销推荐
+                        </span>
+                        <span>
+                            <em class="share-icon em32"></em>
+                            法律咨询
+                        </span>
+                        <span>
+                            <em class="share-icon em33"></em>
+                            商务聚会
+                        </span>
+                        <span>
+                            <em class="share-icon em34"></em>
+                            财税代理
+                        </span>
+                        <span>
+                            <em class="share-icon em35"></em>
+                            宣传设计
+                        </span>
+                        <span>
+                            <em class="share-icon em36"></em>
+                            人事代理
+                        </span>
+                        <span>
+                            <em class="share-icon em37"></em>
+                            政策申请
+                        </span>
+                        <span>
+                            <em class="share-icon em38"></em>
+                            政策顾问
+                        </span>
+                        <span>
+                            <em class="share-icon em39"></em>
+                            创业辅导
+                        </span>
+                        <span>
+                            <em class="share-icon em40"></em>
+                            政策顾问
+                        </span>
+                    </dd>
+                </dl>
+            </div>
+            <!--360°全景图-->
+            <!--空间实景图-->
+            <h1 class="detail-h1 pb-20">位置信息</h1>
+            <h3 class="detail-h3">
+                所属大厦：
+                <a href="" target="_blank">
+                    <span>上海时装商厦</span>
+                </a>
+            </h3>
+        </div>
+        <!-- ========== -->
+        <div class="detail-right_rrr">
+            <div class="adds">
+                <div class="rightPrice">
+                    1000
+                    <i>元/工位/月</i>
+                </div>
+                <div class="rightBor">
+                    <div class="rightInput">
+                        <input class="input-txt" name="" type="text" placeholder="姓名" value="">
+                    </div>
+                    <div class="rightInput">
+                        <input class="input-txt" type="text" placeholder="联系方式" value="1598888888">
+                    </div>
+                    <p class="initialTip rightBor-p1">预约成功后，客服将在5分钟内与您联系</p>
+                    <a href="javascript:void(0)" class="rightBtn">预约看房</a>
+                </div>
+                <div class="rightBor">
+                    <div class="rightTele">
+                        <em title="电话" class="fa fa-phone"></em> 888-888-888
+                    </div>
+                </div>
+                <!--顾问卡片-->
+            </div>
+        </div>
+    </div>
+    <!-- ======= -->
+    <div style="width:100%;height;520px; background-color: #ccc;text-align: center;line-height: 520px;">
+        <h1>地图 map</h1>
+    </div>
+    <div class="warp">
+        <h1 class="detail-h1 pb-20">关于xxxx</h1>
+        <div class="gx-txt2">
+            <p>
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            </p>
+        </div>
+    </div>
+    <!-- 内容结束 -->
+    <div class="bg_h">
+        <div class="warp">
+            <div class="icon_tb">
+                <ul class="text-center">
+                    <li>
+                        <img src="images/advan-zfy.png">
+                        <h3>100%真房源</h3>
+                        <p>实勘团队人工实地拍摄，每一间办公室都由悦办越好精心挑选</p>
+                    </li>
+                    <li>
+                        <img src="images/advan-xhsx.png">
+                        <h3>细化筛选</h3>
+                        <p>提供交通、周边、商业、价格、特色等更多的专业筛选，快速精准找到办公场所</p>
+                    </li>
+                    <li>
+                        <img src="images/advan-gbfw.png">
+                        <h3>贵宾服务</h3>
+                        <p>专业顾问带看，详细讲解楼盘信息，享受VIP服务，助您找到心仪的办公场所</p>
+                    </li>
+                    <li class="mr0">
+                        <img src="images/advan-zzfw.png">
+                        <h3>增值服务</h3>
+                        <p>悦办越好携手众多知名企业服务公司，让您公司享受全方位的企业服务</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <div class="foot">
+        <div class="footbox">
+            <h1>办公选址选悦办越好，1小时轻松搞定 !</h1>
+            <p class="p1">
+                <a href="About.html" target="_blank">关于悦办越好</a>
+                <i class="i1">-</i>
+                <a href="About2.html" target="_blank">联系我们</a>
+                <i class="i1">-</i>
+                <a href="About3.html" target="_blank">商办精英</a>
+                <i class="i1">-</i>
+                <a href="About4.html" target="_blank">常见问题</a>
+            </p>
+            <p class="p1">
+                &copy;2015-2017&nbsp;德御商业地产&nbsp;
+                <a href="javascript:void(0)" target="_blank">沪ICP备xxxxxxx号-1</a> &nbsp;浦东地址：上海市崂山路526号江苏大厦14层A1 &nbsp;浦西地址：上海市南京东路800号新一百大厦14C室
+            </p>
+            <i class="foot-line">-</i>
+            <p class="p2">
+                友情链接：
+                <a target="_blank" href="http://www.ganji.com/xiezilouchuzu/">赶集网写字楼</a>
+                <a target="_blank" href="http://www.58.com/zhaozu/">58同城写字楼</a>
+                <a target="_blank" href="http://sh.sp.anjuke.com/">上海商铺</a>
+                <a target="_blank" href="http://www.add-space.com/">办公室装修</a>
+                <a target="_blank" href="http://xf.pinganfang.com/sh/">上海新房</a>
+                <div class="foot-tele">
+                    <p class="p1">
+                        客服服务：
+                        <i class="i1">（早9:00-晚20:00）</i>
+                    </p>
+                    <p class="p2">021-60520217</p>
+                </div>
+                <div class="foot-ewm">
+                    <img src="images/gzh.jpg" width="96" />
+                    <p class="p1">扫描关注公众号</p>
+                </div>
+        </div>
+    </div>
+    <!-- 底部结束 -->
+    <!-- top -->
+    <div class="clicktop" style="display:none;">
+        <i class="fa fa-angle-up fatop fa-4x"></i>
+    </div>
+    <!-- top结束 -->
+    <script>
+    function function_click() {
+        $("#show_sss").click(); // 触发了a标签的点击事件，但是没有触发页面跳转     
+    }
+    $(document).ready(function() {
+        $(".fixedBg").click(function() {
+            function_click();
+        });
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+        $(".feature>li").click(function() {
+            $(this).addClass('current').siblings().removeClass('current');
+            var da = $(this).attr('data-index');
+            console.log(da);
+            if (da == 0) {
+                $("#box-lis2 tr").show();
+            } else {
+                $("#box-lis2>tr[data-index=" + da + "]").show();
+                $("#box-lis2>tr").not("#box-lis2 tr[data-index=" + da + "]").hide();
+            }
+
+        });
+        var swiper = new Swiper('.swiper-container2', {
+            // 如果需要前进后退按钮
+            nextButton: '.swiper-button-next1',
+            prevButton: '.swiper-button-prev1',
+            paginationClickable: true,
+            slidesPerView: 5,
+            loop: true,
+            spaceBetween: 5
+        });
+
+        var swiper = new Swiper('.swiper-container1', {
+            paginationClickable: true,
+            slidesPerView: 7,
+            spaceBetween: 0,
+            // 如果需要滚动条
+            scrollbar: '.swiper-scrollbar1',
+            scrollbarHide: false,
+            scrollbarDraggable: true
+        });
+        // ======
+        // 
+        // 
+        // 
+        function zhuankai() { $("#box-lis2 tr:lt(4)").show(); }
+        zhuankai();
+        $(".house-more").hide();
+        var len = $("#box-lis2 tr").length;
+        if (len >= 3) {
+            $(".house-more").show();
+        };
+
+        $(".house-more").click(function() {
+            $(this).hide();
+            $("#box-lis2 tr").show();
+        });
+    });
+
+
+    $(function() {
+        $("#myTable").tablesorter();
+    });
+    </script>
+    <script src="https://cdn.bootcss.com/jquery.pin/1.0.1/jquery.pin.js"></script>
+    <script>
+    $(document).ready(function() {
+        $(".detail-right_rrr").pin({
+            containerSelector: "#rongqi"
+        })
+    });
+    </script>
+</body>
+
+</html>
